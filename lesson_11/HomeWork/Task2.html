@@ -1,0 +1,127 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>ToDo List (Task2)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+   
+    <script>
+// Добавьте AngularJS контроллер
+//### Задача2 
+//Добавьте в предыдущую задачу возможность пользователя редактировать задачи и сохранять результат после редактирования.
+        angular.module("firstApp", [])
+            .controller("firstCtrl", function($scope) {
+
+            
+                $scope.items = [{
+                        name: 'Купить молоко',
+                        description: 'Сходить на рынок и купить молоко',
+                        date: '2/18/2015',
+                        completed: false
+                    },
+                    {
+                        name: 'Посмотреть видео урок по AngularJS',
+                        description: 'Досмотреть до конца урок на itvdn.com',
+                        date: '2/18/2015',
+                        completed: false
+                    }
+                ];
+            $scope.flag = false;
+            $scope.Index = -1;
+            
+               $scope.edit = function(index){              
+                    $scope.Index = index;
+                    $scope.flag = true;
+                    $scope.todoName = $scope.items[index].name;
+                    $scope.todoDescription = $scope.items[index].description;
+                    $scope.todoDate = $scope.items[index].date;
+                    $scope.todoCompleted = $scope.items[index].completed;                
+            }
+
+            $scope.save = function(){
+                  $scope.items[$scope.Index].name = $scope.todoName;
+                  $scope.items[$scope.Index].description = $scope.todoDescription;
+                  $scope.items[$scope.Index].date = $scope.todoDate;
+                  $scope.items[$scope.Index].completed = $scope.todoCompleted;
+                  $scope.Index = -1;
+                  $scope.flag = false;
+                  $scope.todoName = undefined;
+                  $scope.todoDate = undefined;
+                  $scope.todoDescription = undefined;
+                  $scope.todoCompleted = false;
+            }       
+
+                $scope.add = function() {
+                    if($scope.todoName==undefined|| $scope.todoDate==undefined|| $scope.todoDescription==undefined){ alert("Введите информацию во все необходимые поля")}
+                    else{
+                    $scope.items.push({
+                        name: $scope.todoName,
+                        description: $scope.todoDescription,
+                        date: $scope.todoDate,
+                        completed: $scope.todoCompleted
+                    });
+                    $scope.todoName = undefined;
+                    $scope.todoDate = undefined;
+                    $scope.todoDescription = undefined;
+                    $scope.todoCompleted = false;}
+                };
+
+
+
+            });
+    </script>
+
+</head>
+
+<body ng-app="firstApp" ng-controller="firstCtrl">
+
+    <div class="container">
+
+        <h3>ToDo List</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tr>
+                <tr ng-repeat="item in items" ">
+                <td> {{ item.name }}</td>
+                <td> {{ item.description }}</td>
+                <td> {{ item.date }}</td>
+                <td> <input type="checkbox" ng-model="item.completed"></td>
+                <td>
+                    <button ng-click="edit($index)">Edit</button>
+                </td>
+            </tr>
+            </tr>
+        </table>
+
+<div>
+            <!-- Форма для добавления новых задач -->
+  <form class="form">
+    <label>Name</label>
+    <div><input type="text"  ng-model="todoName"></div>
+    <br>
+    <label>Due Date</label>
+    <div><input type="text" ng-model="todoDate"></div>
+    <br>
+    <label>Description</label>
+    <div><textarea ng-model="todoDescription" ></textarea></div>
+    <br>
+    <label>
+    <div><input type="checkbox" ng-model="todoCompleted"> Completed</div>
+    </label>
+    <br>
+    <div><button ng-if="!flag" type="submit" ng-click="add()">Add</button></div>
+    <div><button ng-if="flag" type="submit" ng-click="save()">Save</button></div>
+  </form>
+</div>
+</div>
+</body>
+</html>
