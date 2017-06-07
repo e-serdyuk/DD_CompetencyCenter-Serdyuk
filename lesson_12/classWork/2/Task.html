@@ -1,0 +1,107 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>(Task2)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+   
+    <script>
+/*### Задача 2
+Используйте таблицу с данными массива items из предыдущей задачи. Реализуйте следующее:
+
+* Добавьте на страницу 5 элементов checkbox с именами свойств элементов массива items(name, price и т.д.)
+* Нажатие на каждый из checkbox скрывает/отображает соответствующее свойство элементов массива items в таблице 
+* Используйте директиву ng-switch */
+        angular.module("firstApp", [])
+            .controller("firstCtrl", function($scope) {
+
+                     $scope.items = [
+             { name: "B Item", price: 10.9, category: "Category 1", count: 10, tax: 1.12, expiration: 10 },
+             { name: "A Item", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
+             { name: "D Item", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
+             { name: "C Item", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }];
+
+         $scope.bool={name: true,
+                price: false,
+                category: false,
+                count: false,
+                tax: false,
+                expiration: false
+            }
+
+
+    //     $scope.name=false;  $scope.price=true;  $scope.category=false;  $scope.count=false;
+   //      $scope.tax=false;$scope.expiration=true;
+
+
+            });
+    </script>
+<style type="text/css">
+table { 
+    border-collapse: collapse; 
+   }
+   th { 
+    background: #ccc; 
+    padding: 5px; 
+    border: 1px solid black; 
+   }
+   td { 
+    padding: 5px; 
+    border: 1px solid black; 
+   }
+
+</style>
+</head>
+
+<body ng-app="firstApp" ng-controller="firstCtrl">
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>category</th>
+                    <th>count</th>
+                    <th>tax</th>
+                    <th>expiration</th>
+
+                </tr>
+            </thead>
+             <tr ng-repeat="item in items">
+            <td  ng-switch on="bool.name">
+                <div ng-switch-when="true">{{item.name}}</div>
+            </td>
+            <td  ng-switch on="bool.price">
+                <div ng-switch-when="true">{{item.price}}</div>
+            </td>
+            <td  ng-switch on="bool.category">
+                <div ng-switch-when="true">{{item.category}}</div>
+            </td>
+            <td  ng-switch on="bool.count">
+                <div ng-switch-when="true">{{item.count}}</div>
+            </td>
+            <td  ng-switch on="bool.tax">
+                <div ng-switch-when="true">{{item.tax}}</div>
+            </td>
+            <td  ng-switch on="bool.expiration">
+                <div ng-switch-when="true">{{item.expiration}}</div>
+            </td>
+        </tr>
+        </table>
+<div>
+    <input type="checkbox" ng-model="bool.name">name 
+    <input type="checkbox" ng-model="bool.price ">price
+    <input type="checkbox" ng-model="bool.category">category
+    <input type="checkbox" ng-model="bool.count">count
+    <input type="checkbox" ng-model="bool.tax">tax
+    <input type="checkbox" ng-model="bool.expiration">expiration
+</div>
+</div>
+
+
+
+</body>
+</html>

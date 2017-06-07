@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script>
+
+    /*### Задача 1
+Создайте приложение-калькулятор. В приложении должно быть два поля ввода и кнопки «+», «-», «*», «/». Реализуйте двунаправленную привязку таким образом, чтобы при нажатии на кнопки результат арифметических операций выводился на странице. */
+ angular.module("firstApp", [])
+            .controller("firstCtrl", function($scope) {
+
+   $scope.result=0;
+   $scope.operation="";
+
+
+        });
+
+    </script>
+    <style type="text/css">
+        .button {
+            width: 100px;
+            height: 51px;
+            font-size: 30px;
+        }
+
+        .result {
+            height: 95px;
+            padding: 10px 10px;
+                     
+        }
+        button{width: 40px;
+            height: 40px;}
+    </style>
+</head>
+<body ng-app="firstApp" ng-controller="firstCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="row">
+                   
+                    <div class="col-md-6">
+                        <input type="number" ng-model="firstNumber" class="form-control" placeholder="First Number" /><br />
+                        <input type="number" ng-model="secondNumber" class="form-control" placeholder="Second Number" /><br />
+                        <div ng-switch="operation">
+                            <div class="result" ng-switch-when="add">{{firstNumber}} + {{secondNumber}} = {{result}}</div>
+                            <div class="result" ng-switch-when="sub">{{firstNumber}} - {{secondNumber}} = {{result}}</div>
+                            <div class="result" ng-switch-when="mul">{{firstNumber}} * {{secondNumber}} = {{result}}</div>
+                            <div class="result" ng-switch-when="div">{{firstNumber}} / {{secondNumber}} = {{result}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <button ng-click="operation='add';result=firstNumber+secondNumber">+</button><br />
+                        <button  ng-click="operation='sub';result=firstNumber-secondNumber">-</button><br />
+                        <button  ng-click="operation='mul';result=firstNumber*secondNumber">*</button><br />
+                        <button  ng-click="operation='div';result=firstNumber/secondNumber">/</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
