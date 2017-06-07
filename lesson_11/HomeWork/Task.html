@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+    <meta charset="UTF-8">
     <title>ToDo List (Task2)</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
    
@@ -64,13 +65,11 @@
                     <th>Completed</th>
                 </tr>
             </thead>
-            <tr>
-                <tr ng-repeat="item in items" ">
+             <tr ng-repeat="item in items">
                 <td> {{ item.name }}</td>
                 <td> {{ item.description }}</td>
                 <td> {{ item.date }}</td>
                 <td> <input type="checkbox" ng-model="item.completed"></td>
-            </tr>
             </tr>
         </table>
 
@@ -86,9 +85,7 @@
     <label>Description</label>
     <div><textarea ng-model="todoDescription" ></textarea></div>
     <br>
-    <label>
     <div><input type="checkbox" ng-model="todoCompleted"> Completed</div>
-    </label>
     <br>
     <div><button type="submit" ng-click="add()">Add</button></div>
   </form>

@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+    <meta charset="UTF-8">
     <title>ToDo List (Task2)</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
    
@@ -28,8 +29,7 @@
                     }
                 ];
             $scope.flag = false;
-            $scope.Index = -1;
-            
+                    
                $scope.edit = function(index){              
                     $scope.Index = index;
                     $scope.flag = true;
@@ -44,7 +44,6 @@
                   $scope.items[$scope.Index].description = $scope.todoDescription;
                   $scope.items[$scope.Index].date = $scope.todoDate;
                   $scope.items[$scope.Index].completed = $scope.todoCompleted;
-                  $scope.Index = -1;
                   $scope.flag = false;
                   $scope.todoName = undefined;
                   $scope.todoDate = undefined;
@@ -89,8 +88,7 @@
                     <th>Completed</th>
                 </tr>
             </thead>
-            <tr>
-                <tr ng-repeat="item in items" ">
+            <tr ng-repeat="item in items">
                 <td> {{ item.name }}</td>
                 <td> {{ item.description }}</td>
                 <td> {{ item.date }}</td>
@@ -98,7 +96,6 @@
                 <td>
                     <button ng-click="edit($index)">Edit</button>
                 </td>
-            </tr>
             </tr>
         </table>
 
@@ -114,9 +111,7 @@
     <label>Description</label>
     <div><textarea ng-model="todoDescription" ></textarea></div>
     <br>
-    <label>
     <div><input type="checkbox" ng-model="todoCompleted"> Completed</div>
-    </label>
     <br>
     <div><button ng-if="!flag" type="submit" ng-click="add()">Add</button></div>
     <div><button ng-if="flag" type="submit" ng-click="save()">Save</button></div>
