@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="SampleApp">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <style type="text/css">
+    div{border:1px solid black; width:100px;}  
+
+  </style>  
+    
+</head>
+<body ng-controller="SampleAppCtrl">
+    <div ng-hide="hide.e1">comp</div>
+    <div ng-hide="hide.e2">bbb</div>
+    <div ng-hide="hide.e3">comp</div>
+    <div ng-hide="hide.e4">aln</div>
+    <div ng-hide="hide.e5">aaa</div>
+    <div ng-hide="hide.e6">ttt</div>
+    <div ng-hide="hide.e7">bbb</div>
+    <div ng-hide="hide.e8">aaa</div>
+    <div ng-hide="hide.e9">comp</div>
+    <div ng-hide="hide.e10">aln</div>
+    <input type="text" name="" placeholder="введите слово для фильтра блоков по тексту" ng-model="searchValue">
+    <button ng-click="click()">Фильтр</button>
+    <script>
+  /*  ### Задача 2 
+Создайте страницу с десятью тегами div с текстом, полем ввода и кнопкой. Добавьте фильтр, который при вводе значения в поле и после нажатия на кнопку, покажет пользователю только те блоки, текст в которых соответствуют введеному значению. Остальные блоки должны быть скрыты. */
+        var app = angular.module("SampleApp", []);
+
+        app.controller("SampleAppCtrl", function($scope) {
+
+            var collection = document.querySelectorAll("div");
+            $scope.click = function() {
+                var temp = [];
+                temp.length = 0;
+                $scope.hide = {
+                    e1: false,
+                    e2: false,
+                    e3: false,
+                    e4: false,
+                    e5: false,
+                    e6: false,
+                    e7: false,
+                    e8: false,
+                    e9: false,
+                    e10: false
+                };
+                for (var i = 0; i < collection.length; i++) {
+                    if (collection[i].innerHTML != $scope.searchValue) {
+                        temp.push(i);
+                    }
+                }
+                var count = 0;
+                for (var k in $scope.hide) {
+
+                    for (var j = 0; j < temp.length; j++) {
+                        if (temp[j] == count) {
+                            $scope.hide[k] = true;
+                        }
+                    }
+
+
+                    count++;
+                }
+
+            }
+
+        });
+
+    </script>
+</body>
+</html>

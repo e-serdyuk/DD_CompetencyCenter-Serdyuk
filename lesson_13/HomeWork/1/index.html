@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <title>Managing style</title>
+    <style>
+        .padding {padding-left: 130px;}
+        .red {color: red;}
+        .font {font-size: 22px;}
+    </style>
+    <script>
+/*### Задача 1
+Создайте три разных CSS класса, которые по-разному будут оформлять блок текста на странице. Реализуйте возможность выбирать стиль для оформления страницы с помощью кнопок или checkbox*/
+        var app = angular.module('myApp', [])
+        .controller('mainCtrl', function ($scope) {
+          
+        })
+
+    </script>
+</head>
+<body>
+    <div ng-controller="mainCtrl">
+      
+        <p ng-class="{'red' : color, 'padding' : padding, 'font' : font}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+         
+    <input type="checkbox" ng-model="color"> set color to red<br>
+    <input type="checkbox" ng-model="font"> set font to 22px<br>
+    <input type="checkbox" ng-model="padding"> set padding-left to 130px
+    </div>
+</body>
+</html>

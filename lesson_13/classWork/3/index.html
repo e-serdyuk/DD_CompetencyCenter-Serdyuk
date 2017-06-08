@@ -1,0 +1,81 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>(Task3)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+   
+   <script>
+ /*### Задача3  
+Используйте таблицу с данными массива items из второй задачи. Напишите свой фильтр, который выведет на экран только те элементы масства items, у которых значение свойства expiration больше 10. */
+   
+        var app = angular.module('myApp', [])
+        app.controller('mainCtrl', function ($scope) {
+            $scope.sortparam='name';
+            $scope.items = [
+             { name: "B Item", price: 10.9, category: "Category 1", count: 10, tax: 1.12, expiration: 10 },
+             { name: "A Item", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
+             { name: "D Item", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
+             { name: "C Item", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }];
+
+        })
+        app.filter('exp', function () {
+           return function (arr) {
+             for (i = 0; i < arr.length; i++) {
+                   
+                    if (arr[i].expiration < 10) {
+                        arr.splice(i, 1); 
+                    }
+                }
+                return arr; 
+            }
+        })
+
+    </script>
+<style type="text/css">
+table { 
+    border-collapse: collapse; 
+   }
+   th { 
+    background: #ccc; 
+    padding: 5px; 
+    border: 1px solid black; 
+   }
+   td { 
+    padding: 5px; 
+    border: 1px solid black; 
+   }
+
+</style>
+</head>
+
+<body ng-app="myApp" ng-controller="mainCtrl">
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>category</th>
+                    <th>count</th>
+                    <th>tax</th>
+                    <th>expiration</th>
+
+                </tr>
+            </thead>
+             <tr ng-repeat="item in items | orderBy:sortparam | exp">
+                <td> {{ item.name }}</td>
+                <td> {{ item.price }}</td>
+                <td> {{ item.category }}</td>
+                <td>{{ item.count }}</td>
+                <td> {{ item.tax | currency }}</td>
+                <td>{{ item.expiration }}</td>
+            </tr>
+        </table>
+
+</div>
+</body>
+</html>
