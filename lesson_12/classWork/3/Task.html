@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <title>Task3</title>
+    <script>
+   /* ### Задача 3 
+Перепишите код предыдущей задачи с использованием директивы ng-include*/
+        angular.module("firstApp", [])
+            .controller("firstCtrl", function($scope) {
+             $scope.items = [
+                { name: "B Item", price: 10.9, category: "Category 1", count: 10, tax: 1.12, expiration: 10 },
+                { name: "A Item", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
+                { name: "D Item", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
+                { name: "C Item", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }];
+
+        });
+    </script>
+<style type="text/css">
+table { 
+    border-collapse: collapse; 
+   }
+   th { 
+    background: #ccc; 
+    padding: 5px; 
+    border: 1px solid black; 
+   }
+   td { 
+    padding: 5px; 
+    border: 1px solid black; 
+   }
+
+</style>
+
+</head>
+<body ng-app="firstApp" ng-controller="firstCtrl">
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>category</th>
+                    <th>count</th>
+                    <th>tax</th>
+                    <th>expiration</th>
+
+                </tr>
+            </thead>
+        <tr ng-repeat="item in items">
+        <td  ng-include="nameUrl"></td>
+        <td  ng-include="priceUrl"></td>
+        <td  ng-include="categoryUrl"></td>
+        <td  ng-include="countUrl"></td>
+        <td  ng-include="taxUrl"></td>
+        <td  ng-include="expirationUrl"></td>
+    </tr>
+        </table>
+<div>
+    <input type="checkbox" ng-click="nameUrl = 'urls/name.html'">name 
+    <input type="checkbox" ng-click="priceUrl = 'urls/price.html'">price
+    <input type="checkbox" ng-click="categoryUrl = 'urls/category.html'">category
+    <input type="checkbox" ng-click="countUrl = 'urls/count.html'">count
+    <input type="checkbox" ng-click="taxUrl = 'urls/tax.html'">tax
+    <input type="checkbox" ng-click="expirationUrl='urls/expiration.html'">expiration
+</div>
+</div>
+
+</body>
+</html>

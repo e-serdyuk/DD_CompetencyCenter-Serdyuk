@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <title>Task1</title>
+    <script>
+  /*  ### Задача 3
+Реализуйте SPA приложение, в котором пользователю представляется пройти тест из 5 вопросов, в каждом вопросе по 4 варианта ответа. Вопросы должны выбираться с помощью radio-button и когда выбран, например, вопрос №1, то на странице должны появится варианты ответа только для этого вопроса. В конце тестирования отобразите результат теста. При решении данной задачи используйте директиву ng-switch.*/
+        angular.module("firstApp", [])
+            .controller("firstCtrl", function($scope) {
+        $scope.question = {
+            number: ''
+        };
+        $scope.answers = { first: '',second:'',third:"",fourth:"",fifth:"" };
+       
+        $scope.allResult = function () {
+         if($scope.answers.first!==''&&$scope.answers.second!==''&&$scope.answers.third!==''&&$scope.answers.fourth!==''&&$scope.answers.fifth!==''){
+         $scope.result = Number($scope.answers.first) + Number($scope.answers.second) + Number($scope.answers.third) + Number($scope.answers.fourth) + Number($scope.answers.fifth);}
+         else{alert("Вы не ответили на все вопросы")}
+        }
+    });
+</script>
+</head>
+<body ng-app="firstApp" ng-controller="firstCtrl">
+<div class="container">
+    <form>
+        <form >
+            
+                <input type="radio" ng-model="question.number" value="1">Первый вопрос
+                <input type="radio" ng-model="question.number" value="2">Второй вопрос
+                <input type="radio" ng-model="question.number" value="3">Третий вопрос
+                <input type="radio" ng-model="question.number" value="4">Четвертый вопрос
+                <input type="radio" ng-model="question.number" value="5">Пятый вопрос
+            
+        </form>
+    </form>
+    <div ng-switch="question.number">
+        <div ng-switch-when="1">
+            <h1>Столица Дании</h1>
+            <form>
+            <input type="radio" name="q1"  ng-model="answers.first" ng-value="1">Копенгаген
+            <input type="radio" name="q1"  ng-model="answers.first" ng-value="0">Стокгольм
+            <input type="radio" name="q1" ng-model="answers.first" ng-value="0">Тегеран
+            <input type="radio" name="q1"  ng-model="answers.first" ng-value="0">Дания
+            </form>
+        </div>
+        <div ng-switch-when="2">
+            <h1>Столица Австралии</h1>
+          <input type="radio" name="q2" ng-model="answers.second" value="0">Копенгаген
+            <input type="radio" name="q2" ng-model="answers.second" value="0">Сидней
+            <input type="radio" name="q2" ng-model="answers.second" value="0">Мельбурн
+            <input type="radio" name="q2" ng-model="answers.second" value="1">Канберра
+        </div>
+        <div ng-switch-when="3">
+            <h1>Столица Франции</h1>
+            <input type="radio" name="q3" ng-model="answers.third" value="0">Копенгаген
+            <input type="radio" name="q3" ng-model="answers.third" value="0">Сидней
+            <input type="radio" name="q3" ng-model="answers.third" value="0">Лион
+            <input type="radio" name="q3" ng-model="answers.third" value="1">Париж
+        </div>
+        <div ng-switch-when="4">
+            <h1>Какой из городов находиться в Италии</h1>
+            <input type="radio" name="q4" ng-model="answers.fourth" value="0">Загреб
+            <input type="radio" name="q4" ng-model="answers.fourth" value="1">Катанья
+            <input type="radio" name="q4" ng-model="answers.fourth" value="0">Марсель
+            <input type="radio" name="q4" ng-model="answers.fourth" value="0">Берн
+        </div>
+        <div ng-switch-when="5">
+             <h1>Какой из городов находиться в Греции</h1>
+            <input type="radio" name="q5" ng-model="answers.fifth" value="0">Любляна
+            <input type="radio" name="q5" ng-model="answers.fifth" value="0">Палермо
+            <input type="radio" name="q5" ng-model="answers.fifth" value="1">Салоники
+            <input type="radio" name="q5" ng-model="answers.fifth" value="0">Лиссабон
+        </div>
+        <br>
+        Результат <button ng-click="allResult()" value="Посчитать">Посчитать</button> <br/>
+        <span >Твой результат: {{result}} правильных ответ(ов)</span>
+    </div>
+</div>
+
+
+</body>
+</html>
