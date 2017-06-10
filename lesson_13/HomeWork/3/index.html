@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="firstApp">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet" />
+
+    <title>Task3</title>
+    <style>
+  
+         #wrap {
+            width: 350px;
+            margin: auto; 
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input {
+            margin-top: 5px;
+            border-radius: 20px;
+        }
+
+        form .ng-valid.ng-dirty {
+            background-color: lightgreen;
+        }
+
+        form .ng-invalid.ng-dirty {
+            background-color: lightcoral;
+        } 
+
+    </style>
+    <script>
+    /*### Задача 3 
+Создайте форму для регистрации нового пользователя. Форма должна содержать поля: 
+ФИО, email, телефон, пароль, подтверждение пароля. Реализуйте real-time валидацию пользовательского ввода. */
+            angular.module("firstApp", [])
+            .controller("firstCtrl", function($scope) {
+                $scope.mailRegex = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+                $scope.phoneRegex = /[0-9]{10}/;
+                $scope.submit = function(m) {
+                    if (m) {
+                        alert('Form is valid. Sending data.')
+                    }
+                    else {
+                        alert('Form is invalid!');
+                    }
+                }
+            })
+    </script>
+</head>
+<body>
+<div id="wrap" class="panel well container" ng-controller="firstCtrl" >
+    <form name="myForm" ng-submit="submit(myForm.$valid)">
+        <div class="form-group">
+            <label>Name</label>
+            <input name="userName" class="input-lg form-control" type="text" ng-model="newUser.name" required> 
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" ng-model="newUser.email" class="form-control" ng-pattern="mailRegex" required/>
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="text" ng-model="newUser.phone" class="input-lg form-control" ng-pattern="phoneRegex" required/>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" ng-model="myPassword" class="input-lg form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>Confirm the password</label>
+            <input type="password" ng-model="newUser.myPassword2" class="input-lg form-control" ng-pattern="myPassword" required/>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn-info btn-lg btn" />
+        </div>
+    </form>
+</div>
+</body>
+</html>
