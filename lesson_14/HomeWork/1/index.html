@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script>
+
+    /*### Задача 1 
+Создайте сервис, который предоставляет стандартные математические операции – сложение, умножение и т.д. Используйте три разных способа для создания сервиса.  */
+ var app=angular.module("firstApp", [])
+
+    app.controller('firstCtrl', function ($scope, service, factory,provider) {
+        $scope.firstNumber = 0;
+        $scope.secondNumber = 0;
+        $scope.operation = "and";
+        $scope.Plus = function () {
+            $scope.operation="+";
+            $scope.result = service.myPlus($scope.firstNumber, $scope.secondNumber);
+        };
+        $scope.Minus = function () {
+            $scope.operation="-";
+            $scope.result = service.myMinus($scope.firstNumber, $scope.secondNumber);
+        };
+        $scope.Multiplication = function () {
+            $scope.operation="*";
+            $scope.result = provider($scope.firstNumber, $scope.secondNumber);
+        };
+        $scope.Division = function () {
+            $scope.operation="/";
+            $scope.result = factory($scope.firstNumber, $scope.secondNumber)
+        }
+    });
+    app.service('service', function () {
+        var service = this;
+        service.myPlus = function (num1, num2) {
+            return num1 + num2;
+        };
+        service.myMinus = function (num1, num2) {
+            return num1 - num2;
+        };
+    });
+    app.provider('provider', function () {
+            return {
+                $get: function () {
+                    return function (num1, num2) {
+                       return num1 * num2;
+                    };
+                }
+            }
+        });
+    app.factory('factory', function () {
+        return function (num1, num2) {
+            if(num2!=0){return num1 / num2;}
+            else return "Division by zero"
+           
+        }
+    });
+
+    </script>
+    <style type="text/css">
+        .button {
+            width: 100px;
+            height: 51px;
+            font-size: 30px;
+        }
+
+        .result {
+            height: 95px;
+            padding: 10px 10px;
+                     
+        }
+        button{width: 40px;
+            height: 40px;}
+    </style>
+</head>
+<body ng-app="firstApp" ng-controller="firstCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="row">
+                   
+                    <div class="col-md-6">
+                        <input type="number" ng-model="firstNumber" class="form-control" placeholder="First Number" /><br />
+                        <input type="number" ng-model="secondNumber" class="form-control" placeholder="Second Number" /><br />
+                        <div >
+                            <div class="result" >{{firstNumber}} {{operation}} {{secondNumber}} = {{result}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <button ng-click="Plus()">+</button><br />
+                        <button  ng-click="Minus()">-</button><br />
+                        <button  ng-click="Multiplication()">*</button><br />
+                        <button  ng-click="Division()">/</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

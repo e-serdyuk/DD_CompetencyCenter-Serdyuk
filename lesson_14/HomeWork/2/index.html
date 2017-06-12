@@ -1,0 +1,103 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+/*### Задача 2 
+Создайте приложение с интерфейсом показанном в файле template.png. Файл находится в папке Task. 
+Напишите сервис, который после каждого изменения формы, будет создавать JSON обьект с новыми данными и отправлять на сервер. 
+Выведите подготовленный к отправке объект на экран.*/
+var app = angular.module("firstApp", [])
+app.service("mainService", function () {
+    var service = this;
+    service.Add = function (obj,todoName, todoDescription, todoDate, todoCompleted) {
+    obj.push({
+            name: todoName,
+            description: todoDescription,
+            date: todoDate,
+            completed: todoCompleted
+            });
+        return obj;
+    };
+   });
+app.controller("firstCtrl", function($scope, mainService) {
+               $scope.ServerResponse= false;
+                $scope.items = [{
+                        name: 'Купить молоко',
+                        description: 'Сходить на рынок и купить молоко',
+                        date: '2/18/2015',
+                        completed: false
+                    },
+                    {
+                        name: 'Посмотреть видео урок по AngularJS',
+                        description: 'Досмотреть до конца урок на itvdn.com',
+                        date: '2/18/2015',
+                        completed: false
+                    }
+                ];
+           $scope.clickAdd = function () {
+        if($scope.todoName != undefined && $scope.todoDescription != undefined && $scope.todoDate != undefined){
+        $scope.new= mainService.Add($scope.items,$scope.todoName, $scope.todoDescription, $scope.todoDate, $scope.todoCompleted);
+                    $scope.todoName = undefined;
+                    $scope.todoDate = undefined;
+                    $scope.todoDescription = undefined;
+                    $scope.todoCompleted = false;
+        }
+            else { alert("Введите информацию во все необходимые поля");}
+            $scope.ServerResponse = true;
+        }
+    });
+</script>
+
+</head>
+
+<body ng-app="firstApp" ng-controller="firstCtrl">
+
+    <div class="container">
+
+        <h3>ToDo List</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+             <tr ng-repeat="item in items">
+                <td> {{ item.name }}</td>
+                <td> {{ item.description }}</td>
+                <td> {{ item.date }}</td>
+                <td> <input type="checkbox" ng-model="item.completed"></td>
+            </tr>
+        </table>
+
+<div>
+            <!-- Форма для добавления новых задач -->
+  <form class="form">
+    <label>Name</label>
+    <div><input type="text"  ng-model="todoName"></div>
+    <br>
+    <label>Due Date</label>
+    <div><input type="text" ng-model="todoDate"></div>
+    <br>
+    <label>Description</label>
+    <div><textarea ng-model="todoDescription" ></textarea></div>
+    <br>
+    <div><input type="checkbox" ng-model="todoCompleted"> Completed</div>
+    <br>
+    <div><button type="submit" ng-click="clickAdd()">Add</button></div>
+  </form>
+</div><br>
+        <div ng-if="ServerResponse" >
+           <p>{{new}}</p>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <title>Task1</title>
+    <script>
+  /*  ### Задача 1
+Создайте страницу с кнопкой. Разработайте сервис, который будет считать количество кликов по кнопке и выводить его в консоль. Используйте фабричную функцию для создания сервиса. */
+        var app = angular.module('myApp', []);
+            app.controller('mainCtrl', ['$scope', 'clickCounterService', function ($scope, clickCounterService) {
+                $scope.msg = 'Button clicked: ';
+                $scope.output = 'clicks: 0';
+                $scope.countClicks = function () {
+                    $scope.output = clickCounterService($scope.msg);
+                };
+            }])
+            .factory('clickCounterService', function () {
+                var clickCounter = 1;
+                    return function (msg) {
+                    var output = msg + clickCounter++;
+                    console.log(output);
+                    return output;
+                };
+            })
+    </script>
+</head>
+<body ng-controller="mainCtrl">
+    <div>
+        <input type="button"  value="click me" ng-click="countClicks()">
+    </div>
+</body>
+</html>
+
