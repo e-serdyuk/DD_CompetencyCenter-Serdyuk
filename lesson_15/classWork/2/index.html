@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>$interpolate service</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.4/angular-sanitize.js"></script>
+   <script>
+        angular.module("myApp", ["ngSanitize"])
+            .controller("mainCtrl", function ($scope, $interpolate) {
+                var expr = 'Hello my name is {{name}}';
+                var model = { name: '<strong>Ivan</strong>' };
+          $scope.interpolateExpression = function () {
+               var fn = $interpolate(expr);
+               $scope.result = fn(model);
+           }
+            });
+    </script>
+</head>
+<body ng-controller="mainCtrl">
+    <h3>$interpolate</h3>
+    <button ng-click="interpolateExpression()">$interpolate</button>
+    <p ng-bind-html="result"></p>
+</body>
+</html>

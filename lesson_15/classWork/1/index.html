@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+<title>Task1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script >
+ /*### Задача 1 
+Используя сервис $parse, реализуйте калькулятор без использования деректив. */      
+var app = angular.module('myApp', [])
+.controller('myCtrl',function($scope,$parse){
+    $scope.calc = '';
+    var model = {x:'',y:''};
+    $scope.Calc = function(){
+        var fn = $parse($scope.calc);
+        $scope.result = fn(model);
+    }
+});
+</script>    
+</head>
+
+<body ng-controller="myCtrl">
+   <div class="container">
+       <h3>Calculator</h3>
+       <input type="text" ng-model="calc">
+       <button ng-click="Calc()">$parse</button>
+       <p>{{result}}</p>
+   </div>
+    
+</body>
+
+</html>
+
+

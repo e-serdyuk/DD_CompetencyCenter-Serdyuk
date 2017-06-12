@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+ <title>Task1</title>
+</head>
+<script>
+    var app = angular.module('app', []);
+    app.controller('mainCtrl', function($scope, $interval) {
+        $scope.timer = 0;
+        var interval;
+        var inc = function() {
+            $scope.timer += 1;
+        };
+        $scope.start = function() {
+            $scope.timer = 0;
+            interval = $interval(inc, 1000);
+         };
+        $scope.stop=function(){
+            $interval.cancel(interval);
+        };
+    });
+</script>
+<div ng-app="app" ng-controller="mainCtrl">
+    <div>
+        <h1>{{timer}}</h1>
+        <button ng-click="start()">Start</button>
+        <button ng-click="stop()">Stop</button>
+    </div>
+</div>
+</body>
+</html>

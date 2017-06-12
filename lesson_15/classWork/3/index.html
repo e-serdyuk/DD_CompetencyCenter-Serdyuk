@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<title>Task3</title>
+
+<script>
+        var myApp = angular.module("myApp", [])
+            .controller("myCtrl", function ($scope) {
+                $scope.text = "Hello my name is ";
+            })
+            .directive("strText", function ($compile) {
+                return function (scope, element,attr) {
+                    var elem = angular.element("<strong>Ivan</strong>");
+                    var fn = $compile(elem)(scope);
+                    element.append(elem);
+                }
+            });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<p>{{text}} <span str-text></span></p>
+
+</div>
+</body>
+</html>
+
+
+
+
