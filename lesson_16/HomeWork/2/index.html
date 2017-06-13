@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+    <script>
+   /* ### Задача 2 Добавьте в шаблон страницы home список со свойством name из следующего массива: 
+``` 
+   var people = [{name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false}, 
+    {name: 'Masha', age: 25, email: 'm@m', employed: true}, 
+    {name: 'Petya', age: 27, email: 'petya@stuff', employed: true}, 
+    {name: 'John', age: 36, email: 'johnDoe@mail', employed: true},
+    {name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false}]*/
+        angular.module('app', ['ngRoute'])
+
+.config(function ($routeProvider, $locationProvider) {
+
+    $locationProvider.html5Mode(true);
+
+    $routeProvider
+    .when('/home', {
+        templateUrl: 'home.html',
+        controller:'mainCtrl'
+    })
+    .when('/contact', {
+        templateUrl: 'contact.html'
+    })
+    .otherwise({
+        templateUrl: 'home.html'
+     })
+})
+.controller('mainCtrl', function ($scope) {
+      var people = [{name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false}, 
+    {name: 'Masha', age: 25, email: 'm@m', employed: true}, 
+    {name: 'Petya', age: 27, email: 'petya@stuff', employed: true}, 
+    {name: 'John', age: 36, email: 'johnDoe@mail', employed: true},
+    {name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false}]
+})
+    </script>    
+</head>
+
+<body ng-controller="mainCtrl">
+    <nav class="nav">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div  ng-view>
+
+    </div>
+</body>
+</html>
