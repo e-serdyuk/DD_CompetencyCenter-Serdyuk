@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <title>Task1</title>
+    <script>
+   /* ### Задача 1
+Создайте директиву, которая создает кнопку, при нажатии на которую запускается счетчик (на экран начинают выводиться числа в возрастающей последовательности с интервалом в 1 с). */
+        angular.module('myApp', [])
+            .directive('count', function () {
+                return {
+                    restrict: 'A',
+                    templateUrl: 'template/template.html',
+                    controller: function ($scope, $interval) {
+                        var interval;
+                        var flag=0;
+                        $scope.counter = 0;
+                        $scope.start = function () {
+                            if(flag==1){$interval.cancel(interval);}
+                            interval = $interval(function () {
+                                $scope.counter++;
+                                flag=1;
+                            }, 1000)
+                        }
+                    }
+                }
+            })
+    </script>
+</head>
+<body>
+<div class="panel">
+    <div count></div>
+</div>
+</body>
+</html>

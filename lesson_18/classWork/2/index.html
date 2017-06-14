@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <title>Task1</title>
+    <script>
+   /* ### Задача 2
+Добавьте в код предыдущей задачи еще одну директиву, которая будет выводить значение переменной счетчика в консоль. Организуйте код так, чтобы обе директивы использовали один и тот же контроллер. Используйте свойство require.  */
+        angular.module('myApp', [])
+            .directive('count', function () {
+                return {
+                    restrict: 'E',
+                    templateUrl: 'template/template.html',
+                    controller: function ($scope, $interval) {
+                        var interval;
+                        var flag=0;
+                        $scope.counter = 0;
+                        $scope.start = function () {
+                            if(flag==1){$interval.cancel(interval);}
+                            interval = $interval(function () {
+                                $scope.counter++;
+                                flag=1;
+                            }, 1000)
+                        }
+                            $scope.consoleCount = function () {
+                                interval = $interval(function () {
+                                        console.log($scope.counter);
+                                }, 1000)
+                        };
+                    }
+                }
+            })
+            .directive("console", function() {
+                return {
+                    require: "count",
+                    link: function (scope, element, attrs) {
+                        scope.consoleCount();
+                    }
+                };
+            });
+    </script>
+</head>
+<body>
+    <count console></count>
+</body>
+</html>

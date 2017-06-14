@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="directiveApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <title>Task1</title>
+    <script>
+   /* ### Задача 1 
+Создайте пользовательскую директиву, которой можно передать массив, а результатом её работы будет сгенерированный список.*/
+        var app = angular.module('directiveApp', [])
+            .controller('directiveCtrl', function ($scope) {
+                $scope.items = ['one', 'two', 'three', 'four', 'five'];
+            })
+            .directive('list', function () {
+                return function (scope, element, attributes) {
+                    var data = scope.items;
+                    if (angular.isDefined(data)) {
+                        var e = angular.element('<ul>');
+                        element.append(e);
+                             for (var i = 0; i < data.length; i++) {
+                                  e.append(angular.element('<li>').text(data[i]));
+                             } 
+                    }
+                }
+            })
+    </script>
+</head>
+<body>
+    <div ng-controller="directiveCtrl">
+        <div list='items'></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<form class="panel well" name="myForm" ng-submit="submit(myForm.$valid)">
+        <label>username:   <input type="text" name="username" placeholder="Name" ng-model="newUser.name" ng-pattern="nameRegex" class="input-lg form-control" required/></label><br />
+        <label>login:   <input type="text" name="login" placeholder="login" ng-model="newUser.login" ng-pattern="nameRegex" class="input-lg form-control" required/></label><br />
+        <label>password:   <input type="password" name="password" placeholder="password" ng-model="newUser.password" class="input-lg form-control" required /></label><br />
+        <label>email: <input type="email"  name="email" placeholder="email" ng-model="newUser.email" ng-pattern="mailRegex" class="input-lg form-control" required /></label><br />
+        <input type="submit" class="btn-info btn-lg btn" >
+</form>
+

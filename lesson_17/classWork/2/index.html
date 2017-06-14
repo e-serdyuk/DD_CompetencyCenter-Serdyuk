@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="directiveApp">
+
+<head>
+<title>Task2</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script>
+   /* ### Задача 2 
+Создайте директиву, которая создает форму и добавляет ее на страницу. В форме должны быть следующие поля: 
+Username, login, password, email. */
+angular.module('directiveApp', [])
+.directive('form', function() {
+  return {
+    link: function(scope, element, attributes) {
+     
+    },
+    restrict: "A",
+    templateUrl: 'form/template.html'
+  };
+});
+
+</script>  
+</head>
+<body>
+  <div form></div>
+</body>
+</html>
