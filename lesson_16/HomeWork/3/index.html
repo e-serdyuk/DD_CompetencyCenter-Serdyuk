@@ -6,20 +6,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title>Task2</title>
+    <title>Task3</title>
     <style type="text/css">
         .li_nav{display: inline-block;margin-right: 10px;font-size: 20px;}
     </style>
     <script>
-  /*  ### Задача 2 Добавьте в шаблон страницы home список со свойством name из следующего массива: 
-``` 
-   var people = [{name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false}, 
-    {name: 'Masha', age: 25, email: 'm@m', employed: true}, 
-    {name: 'Petya', age: 27, email: 'petya@stuff', employed: true}, 
-    {name: 'John', age: 36, email: 'johnDoe@mail', employed: true},
-    {name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false}]
-```
-Добавьте на страницу поддержку htm5Mode. */
         var app = angular.module('myApp', ['ngRoute'])
             .config(function ($routeProvider, $locationProvider) {
                 $routeProvider
@@ -28,6 +19,9 @@
                     })
                     .when('/home', {
                         templateUrl: 'home.html',
+                    })
+                    .when('/contact/:id', {
+                        templateUrl: 'contact.html'
                     })
                     .when('/contact', {
                         templateUrl: 'contact.html'
@@ -39,11 +33,21 @@
                 });
             })
             .controller('mainCtrl', function ($scope) {
+                    $scope.name = "";
+                    $scope.age = "";
+                    $scope.email = "";
+                    $scope.employed ="";
                 $scope.people  = [{name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false},
                     {name: 'Masha', age: 25, email: 'm@m', employed: true},
                     {name: 'Petya', age: 27, email: 'petya@stuff', employed: true},
                     {name: 'John', age: 36, email: 'johnDoe@mail', employed: true},
                     {name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false}];
+                $scope.detail = function (index) {
+                    $scope.name = $scope.people[index].name;
+                    $scope.age = $scope.people[index].age;
+                    $scope.email = $scope.people[index].email;
+                    $scope.employed = $scope.people[index].employed;
+                }
             });
     </script>
 </head>

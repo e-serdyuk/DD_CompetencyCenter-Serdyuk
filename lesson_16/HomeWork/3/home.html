@@ -5,7 +5,7 @@
     <label>employed: <input type="checkbox" name="employed"></label>
 </form>
     <ul>
-        <li ng-repeat="item in people">{{item.name}}</li>
+        <li ng-repeat="item in people"><a href="contact/{{item.name}}" ng-click="detail($index)">{{item.name}}</a></li>
     </ul>
 
 
