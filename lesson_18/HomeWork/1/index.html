@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+<title>Task1</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script>
+   /* ### Задача 1
+Есть массив items: 
+```
+[
+                { name: "Table", price: 44.10 },
+                { name: "Chair", price: 21.20 },
+                { name: "Pillow", price: 12.20 },
+                { name: "Picture", price: 112.70 },
+                { name: "Lamp", price: 28.31 }
+            ]; 
+```
+Создайте две директивы. Первая создает панель меню с элементами, взятыми из свойства name массива items. Вторая директива
+при клике по элементу на панели меню, показывает пользователю соответсствующий контент, взятый из свойства price массива items. 
+Директивы используют общий контроллер. */
+        angular.module('myApp', [])
+            .controller('firstController', function($scope) {
+                       
+        })
+        .directive('myDirective', function() {
+            return {
+            link: function(scope, element, attrs) {      
+             scope.items = [
+                { name: "Table", price: 44.10 },
+                { name: "Chair", price: 21.20 },
+                { name: "Pillow", price: 12.20 },
+                { name: "Picture", price: 112.70 },
+                { name: "Lamp", price: 28.31 }
+            ];
+            },
+            replace: true,
+            templateUrl:'home.html'
+            }
+            })
+        .directive('secondDirective', function() {
+            return {
+            link: function(scope, element, attrs) {
+                scope.click = function(e) {
+                    alert("price value is "+scope.items[e].price)
+                    
+                };
+            }
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <div class="panel" ng-app="myApp" ng-controller="firstController">
+        <my-directive></my-directive>
+    </div>
+</body>
+</html>
+

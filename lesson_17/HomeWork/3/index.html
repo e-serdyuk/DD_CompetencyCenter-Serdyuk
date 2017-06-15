@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <title>Task3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+    <script>
+   /* ### Задача 3 
+Создайте директиву для генерации меню. 
+В качестве источника данных директива должна использовать массив объектов, одно из свойств объекта должено содержать текст элемента меню, второе свойство должно использоватся для определения адреса перехода при клике по элементу меню. */
+var app = angular.module('myModule',['ngRoute']);
+app.controller ('FirstCtrl', FirstCtrl);
+app.controller ('SecondCtrl', SecondCtrl);
+app.directive ('myDirective', directive);
+app.config (Routes);
+        
+function directive() {
+    return {
+        restict: 'E',
+        templateUrl:'menu.html',
+        scope:false,
+        replace: true
+    };
+}
+
+Routes.$inject = ['$routeProvider'];
+function Routes($routeProvider) {
+    $routeProvider
+    .when('/views/:index', 
+        { template: '<h4>{{itemDescription}}</h4>',
+         controller: SecondCtrl 
+     });
+
+}
+FirstCtrl.$inject = ['$scope'];
+function FirstCtrl($scope) {
+
+
+        $scope.data = [
+        {
+            name: "B Item",
+            text: "Category 1"
+        },
+        {
+            name: "A Item",
+            text: "Category 2"
+        },
+        {
+            name: "D Item",
+            text: "Category 3"
+        }
+        ,
+        {
+            name: "C Item",
+            text: "Category 4"
+        }
+    ];
+
+
+}
+SecondCtrl.$inject = ['$scope', '$route', '$routeParams'];
+function SecondCtrl($scope, $route, $routeParams) {
+    $scope.itemDescription = $scope.data[$routeParams.index].text;
+}
+    </script>
+</head>
+<body ng-controller="FirstCtrl">
+<my-directive></my-directive>
+<div ng-view></div>
+</body>
+</html>

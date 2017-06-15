@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+<title>Task2</title>
+<script>
+/*### Задача 2 
+Создайте две директивы. Первая создает список ul с произвольным количеством элементов. Вторая директива добавляет четным элементам списка CSS класс ‘red’ со следующим значением: 
+```
+.red {
+color: red
+}
+```
+Обе директивы используются в качестве атрибутов и применяются к одному и тому же элементу. При решении задачи используйте приоритет директив.*/
+        angular.module('myApp', [])
+            .controller('myController', function($scope) {
+                $scope.count = 20;
+            })
+            .directive('liDirective', function() {
+                return {
+                  link: function (scope, elem, attr) {
+                     var ul = angular.element('<ul>');
+                     for (var i = 0; i < scope.count ; i++) {
+                        var li = angular.element ('<li>').text ("element № " + (i+1));
+                        ul.append (li);
+                     }
+                     elem.append (ul);
+                 },
+                    restrict: 'A',
+                     priority: 1,
+                    replace: true
+                    
+                }
+            })
+            .directive('child', function() {
+                return {
+                     link: function (scope, elem, attr) {
+                      var array = angular.element (document.querySelectorAll ('li'));
+                      for (var i = 0; i < array.length; i++) {
+                          if (i % 2) {
+                        array[i].className = 'red';
+                          }
+                      }
+
+        },
+        restict: 'A',
+        priority: 2,
+        replace: true
+                }
+            });
+</script>
+    <style>
+        .red {
+            color: red
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="myController">
+        <ul li-directive child ></ul>
+</div>
+    
+</body>
+</html>
