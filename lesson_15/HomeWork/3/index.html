@@ -21,11 +21,13 @@
         section{margin-bottom:250px; }
         a{color: blue;cursor: pointer; font-size: 35px;}
         li{display: inline-block; margin-right: 10px;}
+        .top_menu{position:fixed;top: 0%;}
+        .container{margin-top:70px; }
     </style>
  </head>
 <body ng-app="myApp" ng-controller="mainCtrl">
-<div class="container">
-    <ul>
+
+    <ul class="top_menu">
         <li>
             <a ng-click="scroll('Section1')">Section 1</a>
         </li>
@@ -48,6 +50,7 @@
             <a ng-click="scroll('Section7')">Section 7</a>
         </li>
     </ul>
+    <div class="container">
     <section id="Section1">
         <h1>Section 1</h1>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
