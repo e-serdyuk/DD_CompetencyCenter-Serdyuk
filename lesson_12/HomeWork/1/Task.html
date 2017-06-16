@@ -13,8 +13,13 @@
 
    $scope.result=0;
    $scope.operation="";
-
-
+   
+ $scope.div = function () {
+if($scope.secondNumber=="0"){$scope.result="Divide by zero"}
+    else{
+$scope.operation='div';
+$scope.result=$scope.firstNumber/$scope.secondNumber;}
+}
         });
 
     </script>
@@ -55,7 +60,7 @@
                         <button ng-click="operation='add';result=firstNumber+secondNumber">+</button><br />
                         <button  ng-click="operation='sub';result=firstNumber-secondNumber">-</button><br />
                         <button  ng-click="operation='mul';result=firstNumber*secondNumber">*</button><br />
-                        <button  ng-click="operation='div';result=firstNumber/secondNumber">/</button>
+                        <button  ng-click="div()">/</button>
                     </div>
                 </div>
             </div>

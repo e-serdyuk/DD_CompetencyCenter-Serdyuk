@@ -25,8 +25,7 @@
 </head>
 <body ng-app="firstApp" ng-controller="firstCtrl">
 <div class="container">
-    <form>
-        <form >
+        <form>
             
                 <input type="radio" ng-model="question.number" value="1">Первый вопрос
                 <input type="radio" ng-model="question.number" value="2">Второй вопрос
@@ -35,7 +34,6 @@
                 <input type="radio" ng-model="question.number" value="5">Пятый вопрос
             
         </form>
-    </form>
     <div ng-switch="question.number">
         <div ng-switch-when="1">
             <h1>Столица Дании</h1>
