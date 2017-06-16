@@ -6,21 +6,17 @@
 <title>Task3</title>
 
 <script>
-        var myApp = angular.module("myApp", [])
-            .controller("myCtrl", function ($scope) {
-                $scope.text = "Hello my name is ";
-            })
-            .directive("strText", function ($compile) {
-                return function (scope, element,attr) {
-                    var elem = angular.element("<strong>Ivan</strong>");
-                    var fn = $compile(elem)(scope);
-                    element.append(elem);
-                }
-            });
+     var app = angular.module('myApp', [])
+        .controller('myCtrl', ['$scope', '$compile', function ($scope, $compile) {
+                var btn = $compile('<span>Hello my name is </span><strong>Ivan</strong>')($scope);
+                angular.element(document.getElementById('text')).append(btn);
+        }])
     </script>
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
-<p>{{text}} <span str-text></span></p>
+    <div id="text">
+
+    </div>
 
 </div>
 </body>

@@ -4,24 +4,29 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
  <title>Task1</title>
-</head>
+
 <script>
     var app = angular.module('app', []);
     app.controller('mainCtrl', function($scope, $interval) {
         $scope.timer = 0;
         var interval;
+        $scope.flag = 0;
         var inc = function() {
             $scope.timer += 1;
         };
         $scope.start = function() {
             $scope.timer = 0;
-            interval = $interval(inc, 1000);
+            if($scope.flag == 0){interval = $interval(inc, 1000);}
+            $scope.flag = 1;
          };
         $scope.stop=function(){
             $interval.cancel(interval);
+            $scope.flag = 0;
         };
     });
 </script>
+</head>
+<body>
 <div ng-app="app" ng-controller="mainCtrl">
     <div>
         <h1>{{timer}}</h1>
