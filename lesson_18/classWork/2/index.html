@@ -16,11 +16,11 @@
                         var flag=0;
                         $scope.counter = 0;
                         $scope.start = function () {
-                            if(flag==1){$interval.cancel(interval);}
-                            interval = $interval(function () {
+                            if(flag==0)
+                            {interval = $interval(function () {
                                 $scope.counter++;
                                 flag=1;
-                            }, 1000)
+                            }, 1000)}
                         }
                             $scope.consoleCount = function () {
                                 interval = $interval(function () {
