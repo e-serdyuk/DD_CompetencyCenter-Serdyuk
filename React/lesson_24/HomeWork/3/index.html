@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <style type="text/css">
+    	.menu{overflow: hidden;}
+    	.menu li{float: left;margin-right: 10px;list-style: none;font-size: 25px;}
+    	.animate { 
+        opacity: 0;
+        animation: fade 2s ;
+        animation-fill-mode: forwards;
+    }
+        @keyframes fade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    </style>
+</head>
+<body>
+<!--### Задача 3 
+Модицифицируйте код предыдущей задачи. Реализуйте следующее: 
+* При клике по каждому элементу списка происходит перенаправление на страницу “/tableView/:id” или “/listView/:id”, в зависимости от текущего пути приложения, где id – соответствующее свойтво id элемента списка или таблицы, по которому кликнул пользователь 
+* На странице, на которую будет происходить перенаправление, должна отображаться инфомация об элементе массива users, id которого был передан в поисковой строке. Реализуйте передачу этой информации через query параметры.   -->
+	<div id="container"></div>
+    <script src="build/bundle.js"></script>
+</body>
+</html>
