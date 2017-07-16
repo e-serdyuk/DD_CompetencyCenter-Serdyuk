@@ -1,0 +1,12 @@
+﻿@import 'bootstrap.css';
+ 
+.btn {
+  margin-top: 25px;
+
+} 
+
+.glyphicon {
+    cursor: pointer; 
+}
+.rate span{cursor: pointer;color:red;}
+.rate{font-size: 30px;}
