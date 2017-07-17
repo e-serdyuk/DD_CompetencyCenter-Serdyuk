@@ -23,6 +23,7 @@
 
             this.setState({ count: 0});
             clearInterval(this.interval);
+             this.setState({ flag: 0});
         },
         render: function () {
             return (<div>

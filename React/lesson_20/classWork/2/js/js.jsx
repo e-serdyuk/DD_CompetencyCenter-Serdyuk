@@ -14,6 +14,6 @@
     }
         }
         ReactDOM.render(
-            <Hello one="4" two="3" mode="false" />,
+            <Hello one={4} two={3} mode="false" />,
             document.getElementById("root")
         )

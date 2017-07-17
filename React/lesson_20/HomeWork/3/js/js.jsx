@@ -50,11 +50,12 @@ var Table = React.createClass({
    render: function() {
         return (
             <table>
+            <tbody>
                 {
                     this.state.items.map(function(el, index) {
-                        return <TableChild name={el.name} gender={el.gender} />
+                        return <TableChild k={index} name={el.name} gender={el.gender} />
                     })
-                }
+                }</tbody>
             </table>
         )
     }
@@ -63,7 +64,7 @@ var Table = React.createClass({
 var TableChild = React.createClass({
     render: function() {
         return (
-            <tr><td>{this.props.name}</td><td>{this.props.gender}</td></tr>
+            <tr key={this.props.k} ><td>{this.props.name}</td><td>{this.props.gender}</td></tr>
         )
     }
 });
@@ -72,7 +73,7 @@ var TableChild = React.createClass({
 var Choice = React.createClass({
     getInitialState: function () {
         return {
-            on: true
+            on: "some"
         };
     },
 
@@ -90,7 +91,8 @@ var Choice = React.createClass({
     render: function() {
         return (
             <div>
-                {this.state.on == true ? <Table /> : <List /> }
+                {this.state.on == true ? <Table /> : ''}
+                {this.state.on == false ? <List /> : "" }
        <input type="radio" name="choice" value="table" onClick={this.handleClick}/> table<br/>
    <input type="radio" name="choice" value="list" onClick={this.handleClick}/> list<br />
             </div>

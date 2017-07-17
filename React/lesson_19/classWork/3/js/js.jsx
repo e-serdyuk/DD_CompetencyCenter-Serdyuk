@@ -7,6 +7,6 @@
           }
         }
         ReactDOM.render(
-            <Hello one="4" two="3" />,
+            <Hello one={4} two={3} />,
             document.getElementById("root")
         )
