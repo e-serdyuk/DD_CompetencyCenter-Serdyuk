@@ -26328,7 +26328,7 @@ var Table = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.Link,
-                                    { to: '/tableView/' + i },
+                                    { to: '/tableView/' + el.id },
                                     el.first_name
                                 )
                             ),
@@ -26337,7 +26337,7 @@ var Table = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.Link,
-                                    { to: '/tableView/' + i },
+                                    { to: '/tableView/' + el.id },
                                     el.last_name
                                 )
                             ),
@@ -26346,7 +26346,7 @@ var Table = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.Link,
-                                    { to: '/tableView/' + i },
+                                    { to: '/tableView/' + el.id },
                                     el.gender
                                 )
                             )
@@ -26412,7 +26412,7 @@ var List = function (_React$Component) {
                         { key: i },
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { to: '/listView/' + i },
+                            { to: '/listView/' + el.id },
                             el.first_name,
                             ' ',
                             el.last_name
@@ -26450,7 +26450,11 @@ var users = [{ first_name: "Matthew", last_name: "Phillips", email: "mphillips0@
 
 function About(props) {
     console.log(props);
-    var id = props.match.params.id;
+    var k = props.match.params.id;
+    var id;
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].id == k) id = i;
+    }
     return _react2.default.createElement(
         "div",
         null,

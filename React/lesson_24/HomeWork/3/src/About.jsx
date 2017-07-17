@@ -11,7 +11,13 @@ var users = [{first_name:"Matthew",last_name:"Phillips",email:"mphillips0@myspac
     
 export default function About(props) {
 console.log(props)
-var id=props.match.params.id
+var k=props.match.params.id
+var id;
+for(var i=0;i<users.length;i++)
+{
+    if(users[i].id==k)
+       id=i;
+}
         return (
             <div>
 <p><span>first_name-</span><strong>{users[id].first_name}</strong></p>

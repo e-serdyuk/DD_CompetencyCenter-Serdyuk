@@ -16,7 +16,7 @@ export default class List extends React.Component {
             <ul className="animate">
                 {
                     users.map((el, i) => (
-                                <li key={i}><Link  to={`/listView/${i}`}>
+                                <li key={i}><Link  to={`/listView/${el.id}`}>
                                 {el.first_name} {el.last_name}</Link></li>
                     ))
                 }

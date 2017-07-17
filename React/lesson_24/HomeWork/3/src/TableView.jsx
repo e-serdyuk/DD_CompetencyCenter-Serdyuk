@@ -27,9 +27,9 @@ export default class Table extends React.Component {
                     {
                         users.map((el, i) => (
                             <tr key={i}>
-                            <td><Link  to={`/tableView/${i}`}>{el.first_name}</Link></td>
-                            <td><Link  to={`/tableView/${i}`}>{el.last_name}</Link></td>
-                            <td><Link  to={`/tableView/${i}`}>{el.gender}</Link></td>
+                            <td><Link  to={`/tableView/${el.id}`}>{el.first_name}</Link></td>
+                            <td><Link  to={`/tableView/${el.id}`}>{el.last_name}</Link></td>
+                            <td><Link  to={`/tableView/${el.id}`}>{el.gender}</Link></td>
                             </tr>
                             ))
                     }
