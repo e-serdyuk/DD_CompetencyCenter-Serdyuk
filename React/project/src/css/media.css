@@ -1,0 +1,475 @@
+@media only screen and (max-width: 1400px) {
+    .menu li {
+        margin-right: 5px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #logo {
+        width: 45%
+    }
+    .fourColumn_block {
+    width: 90%;
+    }
+    #menu {
+        width: 55%;
+    }
+    .menu li {
+        margin-right: 0px;
+    }
+    .switch {
+        background: none;
+    }
+    .text1 {
+        border-top: 2px solid #00e1ff;
+        padding-top: 40px;
+    }
+    .rights img {
+        right: 12%;
+    }
+    .team-group {
+        width: 70%;
+    }
+    .team {
+        width: 34%;
+        margin-right: 0;
+    }
+    .photo {
+        height: 407px;
+        padding-top: 78px;
+    }
+    .photo_text {
+        font-size: 40px;
+        padding-top: 154px;
+    }
+    .device{width: 90%;}
+}
+@media only screen and (max-width: 992px) {
+    #logo {
+        width: 32%
+    }
+    #menu {
+        width: 68%;
+    }
+    .fourColumn_block {
+        width: 765px;
+    }
+  /*  .device,
+    .device_description {
+        padding-left: 0;
+    }*/
+    .portfolio_pictures_block {
+        max-width: 25%;
+    }
+    #portfolio,
+    #whoweare,
+    #contacts {
+        padding-top: 50px;
+    }
+    .team-group {
+        width: 70%;
+        margin-bottom: 65px
+    }
+    .team {
+        width: 35%;
+        margin-right: 0;
+    }
+    .photo {
+        height: 407px;
+    }
+    .photo_text {
+        font-size: 30px;
+    }
+    .rights img {
+        right: 15%;
+    }
+    .div_address {
+        padding-top: 50px;
+    }
+    .address {
+        height: 282px;
+    }
+    .selection {
+        width: 80%;
+    }
+    .rights {
+        padding-bottom: 20px;
+        padding-top: 0px;
+    }
+    .news {
+        margin-bottom: 50px;
+        width: 90%;
+    }
+    #portfolio p,
+    #whoweare .title,
+    #contacts .title {
+        margin-bottom: 30px;
+    }
+    .new_description {
+        width: 78%;
+    }
+    .device {
+        width: 80%;
+    }
+    .selection {
+        width: 100%;
+    }
+    .fourColumn_block {
+        width: 80%;
+    }
+    .text1{width: 90%;}
+}
+@media only screen and (max-width: 768px) {
+    header {
+        line-height: 30px;
+    }
+    .fourColumn_block {
+        width: 80%;
+    }
+    .text1 {
+        width: 80%;
+        margin-bottom: 0;
+    }
+    .selection {
+        width: 70%;
+    }
+    .selection1 {
+        float: none;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .selection2 {
+        float: none;
+        width: 100%;
+        right: 0;
+    }
+    .device_picture {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .device_description {
+        width: 50%;
+        margin: 0 auto;
+    }
+    #portfolio p,
+    #whoweare .title,
+    #contacts .title {
+        width: 91%;
+    }
+    .portfolio {
+        width: 72%;
+        margin-bottom: 30px;
+    }
+    .portfolio_pictures_block {
+        max-width: 50%;
+    }
+    .team {
+        width: 51%;
+    }
+    .news {
+        width: 80%;
+    }
+    .new_description {
+        width: 78%;
+    }
+    .device {
+        width: 80%;
+    }
+    .device_picture {
+        width: 30%;
+    }
+    .contacts {
+        width: 90%;
+    }
+    .device_description h2 {
+        font-size: 28px;
+    }
+    .rights img {
+        right: 25%;
+    }
+    .device_mod {
+        float: none;
+    }
+    .fourColumn {
+        width: 50%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        vertical-align: middle;
+    }
+    #fourColumn_last_span {
+        position: relative;
+        top: 58px;
+    }
+    #menu {
+        display: none;
+    }
+    .contacts_name {
+        float: none;
+        margin-bottom: 30px;
+        width: 63%;
+    }
+    .contacts_email {
+        float: none;
+        margin-bottom: 30px;
+        width: 63%;
+    }
+    .contacts_submit {
+        float: none;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .contacts_message {
+        width: 63%;
+        margin-top: 0;
+    }
+    .photo {
+        height: 240px;
+        margin-bottom: 50px;
+    }
+    .photo_text {
+        font-size: 24px;
+        padding-top: 64px;
+    }
+    .portfolio li {
+        padding: 15px 12px;
+    }
+    .error1 {
+        top: 109px;
+        right: 0%;
+    }
+    .error2 {
+        top: 165px;
+        left: 0%;
+    }
+    .error3 {
+        top: 220px;
+        right: 25%;
+        padding-left: 50%;
+    }
+    .hamburger {
+        display: block;
+    }
+    header {
+        width: 100%;
+        background: #ffffff;
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 1px solid #dddddd;
+    }
+    .hamburger {
+        background: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 45px;
+        padding: 5px 15px 0px 15px;
+        color: #999;
+        border: 0;
+        font-size: 1.4em;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        z-index: 10000000000000;
+    }
+    .cross {
+        background: none;
+        position: absolute;
+        top: 0px;
+        right: 0;
+        padding: 7px 15px 0px 15px;
+        color: #999;
+        border: 0;
+        font-size: 3em;
+        line-height: 65px;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        z-index: 10000000000000;
+    }
+    .menu_burg {
+        z-index: 1000000;
+        font-weight: bold;
+        width: 100%;
+        background: #f1f1f1;
+        position: fixed;
+        text-align: center;
+        font-size: 12px;
+    }
+    .menu_burg ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        list-style-image: none;
+    }
+    .menu_burg li {
+        display: block;
+        border-bottom: #dddddd 1px solid;
+    }
+    .menu_burg li:hover {
+        display: block;
+        background: #ffffff;
+        border-bottom: #dddddd 1px solid;
+        cursor: pointer;
+    }
+    .menu_burg ul li a {
+        text-decoration: none;
+        margin: 0px;
+    }
+    .menu_burg ul li a:hover {
+        text-decoration: none;
+    }
+    .menu_burg a {
+        text-decoration: none;
+        color: #666;
+    }
+    .menu_burg a:hover {
+        text-decoration: none;
+        color: #666;
+    }
+    .glyphicon-home {
+        color: white;
+        font-size: 1.5em;
+        margin-top: 5px;
+        margin: 0 auto;
+    }
+    a {
+        color: #336699;
+    }
+}
+@media only screen and (max-width: 440px) {
+    .device_description {
+        width: 90%;
+    }
+
+    .portfolio {
+        width: 40%;
+        text-align: center;
+    }
+    .portfolio li {
+        margin-right: 0;
+        float: none;
+    }
+    .portfolio_pictures_block {
+        max-width: 100%;
+    }
+    .team {
+        width: 85%;
+    }
+    .new_description {
+        width: 65%;
+    }
+    .new_date {
+        width: 23%margin-right: 0;
+    }
+    .error1 {
+        top: 102px;
+        left: -2%;
+    }
+    .error2 {
+        top: 152px;
+        left: -2%;
+    }
+    .error3 {
+        top: 207px;
+        right: 9%;
+        padding-left: 13%;
+    }
+      .selection_click {
+        background: none;
+        border: 1px solid #00e1ff;
+    }
+    .selection_noclick {
+        background: none;
+        border: 1px solid grey;
+    }
+    .selection1,
+    .selection2 {
+        padding-top: 0;
+        height: 30%;
+        margin-bottom: 15px;
+        padding: 10px 10px;
+        width: 85%;
+    }
+    .selection {
+        width: 80%;
+        padding-top: 20px;
+    }
+    .selection2 {
+        right: -12px;
+    }
+
+}
+@media only screen and (max-width: 320px) {
+    .photo {
+        height: 110px;
+    }
+    .fourColumn {
+        width: 50%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        vertical-align: middle;
+    }
+    .switch {
+        font-size: 12px;
+    }
+  
+    .device_description {
+        width: 85%;
+    }
+    #portfolio,
+    #whoweare,
+    #contacts {
+        padding-top: 20px;
+    }
+    #portfolio p,
+    #whoweare .title,
+    #contacts .title {
+        width: 85%;
+    }
+    #fourColumn_last_span {
+        position: relative;
+        top: 58px;
+    }
+    .fourColumn_mod {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .photo_text {
+        padding-top: 0;
+        font-size: 16px;
+    }
+    .photo a {
+        padding: 9px 20px;
+        font-size: 13px;
+    }
+    .selection2 {
+        right: -7px;
+    }
+    #portfolio h2,
+    #whoweare h2,
+    #contacts h2 {
+        font-size: 30px;
+    }
+    .error1 {
+        top: 96px;
+        right: -9%;
+        font-size: 12px;
+    }
+    .error2 {
+        top: 156px;
+        left: -3%;
+       
+        font-size: 12px;
+    }
+    .error3 {
+        top: 207px;
+        right: 11%;
+        font-size: 12px;
+    }
+    .div_address {
+        background: none;
+        width: 90%;
+    }
+    .rights img {
+        right: 42%;
+    }
+}
