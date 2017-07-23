@@ -22,7 +22,7 @@ class Happy extends React.Component {
         return ( <div>
 <h2>Happy Stories</h2>
 <div className="happy_story">
-  <div className="happy_story_picture" ><img src={this.props.stateNew.newStoriesData[0].photo}/></div>
+  <div className="happy_story_picture" ><img src={this.props.stateNew.newStoriesData[0].photo}/><span className="overlayed"></span></div>
   <div className="happy_story_text" >
     <h4>{this.props.stateNew.newStoriesData[0].name}</h4>
     <p>{this.props.stateNew.newStoriesData[0].description}</p>
@@ -35,7 +35,7 @@ class Happy extends React.Component {
     <h4>{this.props.stateNew.newStoriesData[1].name}</h4>
     <p>{this.props.stateNew.newStoriesData[1].description}</p>
   </div>
-   <div className="happy_story_picture2" ><img src={this.props.stateNew.newStoriesData[1].photo}/></div>
+   <div className="happy_story_picture2" ><img src={this.props.stateNew.newStoriesData[1].photo}/><span className="overlayedRight"></span></div>
 </div>
  <button onClick={this.story}>MORE STORIES</button>
   </div>

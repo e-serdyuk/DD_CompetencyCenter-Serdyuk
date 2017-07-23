@@ -22,6 +22,7 @@ class Search extends React.Component {
 
         return (
 <div>
+
    <select className="select_gender">
    <option disabled selected>I am:</option>
     <option value="man">man</option>

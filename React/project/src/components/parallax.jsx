@@ -4,8 +4,20 @@ class Parallax extends React.Component {
     constructor(props) {
         super(props)
     }  
+componentDidMount() {
+$(window).scroll(function(e){
+parallax();
+});
+function parallax(){
+var scrolled = $(window).scrollTop();
+$('.bg').css('top',-(scrolled*0.1)+'px');
+}
+
+}
+
     render(){
-        return (
+        return (<div>
+        <div className="bg"></div>
   <div className="parallax">
       <div className="ThreeColumn">
          <img src="src/images/icon1.png" alt="WEB DESIGN"/><br/>
@@ -22,6 +34,7 @@ class Parallax extends React.Component {
          <p>OVER 4000</p>
          <p>Male users</p>
       </div>
+  </div>
   </div>
         )
     }

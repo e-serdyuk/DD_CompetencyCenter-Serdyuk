@@ -11,6 +11,7 @@
       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non \
       proident, sunt  culpa qui officia deserunt mollit anim id est laborum.",
       "date_registration":"19/02/17",
+      "image":"../src/images/photo1.png",
       "isOnline":"false"
    },
    {  
@@ -22,6 +23,7 @@
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
 consequat.",
       "date_registration":"24/06/17",
+      "image":"../src/images/photo2.png",
       "isOnline":"true"
    },
    {  
@@ -34,6 +36,7 @@ tempor incididunt ut laborertertqua. Ut enim ad minim veniam, \
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
 consequat.",
       "date_registration":"09/05/17",
+      "image":"../src/images/photo3.png",
       "isOnline":"true"
    },
    {  
@@ -45,6 +48,7 @@ consequat.",
 te minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
 consequat.",
       "date_registration":"09/07/17",
+      "image":"../src/images/photo4.png",
       "isOnline":"true"
    },
    {  
@@ -56,6 +60,7 @@ consequat.",
       aliquip ex ea commodo\
 consequat.",
       "date_registration":"07/05/16",
+       "image":"http://www.miabellaguzellik.com/wp-content/uploads/bfi_thumb/minoxidil-30htngxhbbrkug0ojdzi8a.jpg",
       "isOnline":"false"
    },
    {  
@@ -68,6 +73,7 @@ tempor incididunt ut laborertertqua. Ut enim ad minim veniam, \
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
 consequat.",
       "date_registration":"12/02/17",
+       "image":"https://weightlosssurgeon.com/wp-content/uploads/2012/12/Letting-Weight-Loss-Surgery-Build-Your-Confidence.jpg",
       "isOnline":"false"
    },
    {  
@@ -79,6 +85,7 @@ consequat.",
       aliquip ex ea commodo \
 consequat.",
       "date_registration":"01/10/16",
+       "image":"https://im0-tub-ua.yandex.net/i?id=02a12b156c65f0775bcb454d8c990af1&n=33&h=215&w=215",
       "isOnline":"true"
    },
    {  
@@ -90,6 +97,7 @@ consequat.",
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
 consequat.",
       "date_registration":"09/11/16",
+       "image":"http://www.invalirus.ru/uploads/fotos/foto_1432.png",
       "isOnline":"false"
    },
    {  
@@ -100,6 +108,7 @@ consequat.",
       "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod \
 tempor incididuntp ex ea commodoconsequat.",
       "date_registration":"12/12/15",
+       "image":"http://woodclan.ru/wp-content/uploads/2017/01/team7-270x270.jpg",
       "isOnline":"true"
    },
    {  
@@ -110,6 +119,7 @@ tempor incididuntp ex ea commodoconsequat.",
       "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod \
 tempor incididuntp ex ea commodoconsequat.",
       "date_registration":"02/12/16",
+       "image":"http://www.miabellaguzellik.com/wp-content/uploads/bfi_thumb/featured-1-30h9gout4cussp8qgz5ybu.jpg",
       "isOnline":"true"
    }
 ]
@@ -144,7 +154,7 @@ let stories = [
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\
       cillum dolore eu fugiat nulla pariatur.lit anim id est laborum.",
-      "photo":"https://s-media-cache-ak0.pinimg.com/236x/fc/8e/99/fc8e9924fe0cd073203d36e9f8b21613--love-story.jpg"
+      "photo":"https://files.dlyasvadbi.ru/crop/250x250/user_files/194/4d741f4d50e79a88a8f35a3511a322026ca33cde.jpg"
 
    },
       {  
@@ -154,7 +164,7 @@ let stories = [
       quis nostrud eprehenderit in voluptate velit esse\
       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "photo":"https://s-media-cache-ak0.pinimg.com/originals/58/af/ab/58afabcadbd7a5e4b1065703d3883e18.jpg"
+      "photo":"http://tatiana-sirenko.com/wp-content/uploads/2016/12/Miniatyura-20-250x250.jpg"
 
    },
       {  
@@ -165,7 +175,7 @@ let stories = [
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\
       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "photo":"https://cs7066.vk.me/c540106/v540106788/3d4f1/DVCINkCj92U.jpg"
+      "photo":"https://proper.gifts/61-home_default/fotosessiya-love-story.jpg"
 
    },
       {  
@@ -183,8 +193,15 @@ let stories = [
 ]
 let newStoriesData=[stories[0],stories[1]]
 
+                function matchesId(val) {
+                if (val.isOnline=="true") {
+                    return val
+                }
+            }
+            let OnlineData = data.filter(matchesId);
+           
 
-const reducer = (state={blogs: null, data:data, newStoriesData}, action) => {
+const reducer = (state={blogs: null, data:data, newStoriesData,OnlineData}, action) => {
 
     switch(action.type) {
        
@@ -205,7 +222,8 @@ const reducer = (state={blogs: null, data:data, newStoriesData}, action) => {
                 }
             }
             var newData = state.data.filter(matchesId);
-
+            console.log(newData)
+            alert("Please see the console. Found "+newData.length+" users")
              return {...state, newFilterData: newData} }
             break;
         }
@@ -226,21 +244,48 @@ const reducer = (state={blogs: null, data:data, newStoriesData}, action) => {
             return {...state, newStoriesData: arr}
             break;
         }
+          case 'CHANGEBLOGS': {
+          var id=state.blogs
+          if(state.blogsToShow){var showed=state.blogsToShow}
+          else {let showed=[id[0],id[1],id[2]]}
+          
+            function matchesId(val) {
+                if (showed[0]!=val&&showed[1]!=val&&showed[2]!=val) {
+                    return val}
 
-        case 'FETCH_USERS_START': {
-            return {...state, fetching: true, blogs: []}
-            break;
-        }
-        case 'FETCH_USERS_ERROR': {
-            return {...state, fetching: false, error: action.payloads, blogs: []}
+            }
+            var nData = id.filter(matchesId);
+
+
+          function getRandomArbitrary(min, max) {
+          var n=Math.random() * (max - min) + min;
+        
+         return Math.round(n)
+
+         }
+   
+
+
+
+         var n=0;
+         while(n==0){
+    var arr=[nData[getRandomArbitrary(0, 6)],nData[getRandomArbitrary(0, 6)],nData[getRandomArbitrary(0, 6)]]
+    if(arr[0]!==arr[1]&&arr[0]!==arr[2]&&arr[1]!==arr[2])
+    n=1;
+
+         }
+          
+            return {...state, blogsToShow: arr}
             break;
         }
         case 'RECEIVE_USERS': {
+        var id = action.payload
+        var show=[id[0],id[1],id[2]]
+
             return {
                 ...state,
-                fetching: false,
-                fetched: true,
-                blogs: action.payload
+                 blogs: action.payload,
+                 blogsToShow:show
             }
             break;
         }

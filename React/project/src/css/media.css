@@ -1,259 +1,119 @@
-@media only screen and (max-width: 1400px) {
-    .menu li {
-        margin-right: 5px;
+@media only screen and (max-width: 1367px) {
+    .header_container {
+        width: 95%;
+    }
+    .photo {
+        height: 561px;
+    }
+    .happy_story {
+        width: 85%;
+    }
+    .blog-group {
+        width: 76%;
+    }
+    form {
+        width: 70%;
+    }
+    form input[type="text"] {
+        width: 98%;
+    }
+    .search_section div {
+        width: 84%;
     }
 }
 @media only screen and (max-width: 1200px) {
-    #logo {
-        width: 45%
-    }
-    .fourColumn_block {
-    width: 90%;
-    }
-    #menu {
+    .tabs {
         width: 55%;
+        padding-top: 65px;
     }
-    .menu li {
-        margin-right: 0px;
+    .members {
+        height: 570px;
     }
-    .switch {
-        background: none;
+    .happy h2,
+    .section_blog h2,
+    .contact_us h2 {
+        padding-top: 65px;
     }
-    .text1 {
-        border-top: 2px solid #00e1ff;
-        padding-top: 40px;
+    .happy_story {
+        width: 95%;
     }
-    .rights img {
-        right: 12%;
+    .happy_story_text2 {
+        width: 66%;
     }
-    .team-group {
-        width: 70%;
-    }
-    .team {
-        width: 34%;
-        margin-right: 0;
-    }
-    .photo {
-        height: 407px;
-        padding-top: 78px;
-    }
-    .photo_text {
-        font-size: 40px;
-        padding-top: 154px;
-    }
-    .device{width: 90%;}
-}
-@media only screen and (max-width: 992px) {
-    #logo {
-        width: 32%
-    }
-    #menu {
+    .happy_story_text {
         width: 68%;
     }
-    .fourColumn_block {
-        width: 765px;
+    .blog-group {
+        width: 85%;
     }
-  /*  .device,
-    .device_description {
-        padding-left: 0;
-    }*/
-    .portfolio_pictures_block {
-        max-width: 25%;
-    }
-    #portfolio,
-    #whoweare,
-    #contacts {
-        padding-top: 50px;
-    }
-    .team-group {
-        width: 70%;
-        margin-bottom: 65px
-    }
-    .team {
-        width: 35%;
-        margin-right: 0;
+    .search_section select {
+        width: 14%;
+        margin-right: 2%;
     }
     .photo {
-        height: 407px;
+        height: 493px;
     }
     .photo_text {
-        font-size: 30px;
+        font-size: 50px;
+        padding-top: 200px;
     }
-    .rights img {
-        right: 15%;
+    .menu li {
+        margin-right: 5%;
     }
-    .div_address {
-        padding-top: 50px;
+    form input[type="submit"] {
+        margin-top: 30px;
     }
-    .address {
-        height: 282px;
+    .contact_us {
+        height: 480px;
     }
-    .selection {
-        width: 80%;
-    }
-    .rights {
-        padding-bottom: 20px;
-        padding-top: 0px;
-    }
-    .news {
-        margin-bottom: 50px;
-        width: 90%;
-    }
-    #portfolio p,
-    #whoweare .title,
-    #contacts .title {
-        margin-bottom: 30px;
-    }
-    .new_description {
-        width: 78%;
-    }
-    .device {
-        width: 80%;
-    }
-    .selection {
-        width: 100%;
-    }
-    .fourColumn_block {
-        width: 80%;
-    }
-    .text1{width: 90%;}
 }
-@media only screen and (max-width: 768px) {
-    header {
-        line-height: 30px;
-    }
-    .fourColumn_block {
-        width: 80%;
-    }
-    .text1 {
-        width: 80%;
-        margin-bottom: 0;
-    }
-    .selection {
-        width: 70%;
-    }
-    .selection1 {
-        float: none;
-        margin: 0 auto;
-        width: 100%;
-    }
-    .selection2 {
-        float: none;
-        width: 100%;
-        right: 0;
-    }
-    .device_picture {
-        width: 50%;
-        margin: 0 auto;
-    }
-    .device_description {
-        width: 50%;
-        margin: 0 auto;
-    }
-    #portfolio p,
-    #whoweare .title,
-    #contacts .title {
-        width: 91%;
-    }
-    .portfolio {
-        width: 72%;
-        margin-bottom: 30px;
-    }
-    .portfolio_pictures_block {
-        max-width: 50%;
-    }
-    .team {
-        width: 51%;
-    }
-    .news {
-        width: 80%;
-    }
-    .new_description {
-        width: 78%;
-    }
-    .device {
-        width: 80%;
-    }
-    .device_picture {
-        width: 30%;
-    }
-    .contacts {
-        width: 90%;
-    }
-    .device_description h2 {
-        font-size: 28px;
-    }
-    .rights img {
-        right: 25%;
-    }
-    .device_mod {
-        float: none;
-    }
-    .fourColumn {
-        width: 50%;
-        margin-right: 0;
-        margin-bottom: 20px;
-        vertical-align: middle;
-    }
-    #fourColumn_last_span {
-        position: relative;
-        top: 58px;
-    }
-    #menu {
-        display: none;
-    }
-    .contacts_name {
-        float: none;
-        margin-bottom: 30px;
-        width: 63%;
-    }
-    .contacts_email {
-        float: none;
-        margin-bottom: 30px;
-        width: 63%;
-    }
-    .contacts_submit {
-        float: none;
-        margin: 0 auto;
-        margin-top: 50px;
-    }
-    .contacts_message {
-        width: 63%;
-        margin-top: 0;
-    }
+@media only screen and (max-width: 992px) {
     .photo {
-        height: 240px;
-        margin-bottom: 50px;
+        height: 400px;
     }
     .photo_text {
-        font-size: 24px;
-        padding-top: 64px;
+        font-size: 44px;
+        padding-top: 159px;
     }
-    .portfolio li {
-        padding: 15px 12px;
+    .search_section select {
+        width: 15%;
+        margin-right: 1%;
     }
-    .error1 {
-        top: 109px;
-        right: 0%;
+    .parallax {
+        width: 70%;
     }
-    .error2 {
-        top: 165px;
-        left: 0%;
+    .happy_story {
+        width: 98%;
     }
-    .error3 {
-        top: 220px;
-        right: 25%;
-        padding-left: 50%;
+    .happy_story_text2 {
+        width: 63%;
     }
-    .hamburger {
+    .happy_story_text {
+        width: 65%;
+    }
+    .blog:last-child {
+        margin: 0 auto;
         display: block;
+        margin-top: 20px;
     }
-    header {
-        width: 100%;
-        background: #ffffff;
-        height: 60px;
-        line-height: 60px;
-        border-bottom: 1px solid #dddddd;
+    .blog {
+        width: 40%;
+        margin-right: 0;
+    }
+    .blog:first-child {
+        margin-right: 19%;
+    }
+    .section_blog {
+        height: 1100px;
+    }
+    .joinUs {
+        height: 475px;
+    }
+    .joinsus_text {
+        padding-top: 185px;
+    }
+    .footer_container {
+        width: 92%;
     }
     .hamburger {
         background: none;
@@ -331,145 +191,213 @@
         margin-top: 5px;
         margin: 0 auto;
     }
-    a {
-        color: #336699;
+    .hamburger {
+        display: block;
     }
-}
-@media only screen and (max-width: 440px) {
-    .device_description {
-        width: 90%;
+    #menu {
+        display: none;
     }
-
-    .portfolio {
-        width: 40%;
-        text-align: center;
-    }
-    .portfolio li {
-        margin-right: 0;
-        float: none;
-    }
-    .portfolio_pictures_block {
-        max-width: 100%;
-    }
-    .team {
-        width: 85%;
-    }
-    .new_description {
-        width: 65%;
-    }
-    .new_date {
-        width: 23%margin-right: 0;
-    }
-    .error1 {
-        top: 102px;
-        left: -2%;
-    }
-    .error2 {
-        top: 152px;
-        left: -2%;
-    }
-    .error3 {
-        top: 207px;
-        right: 9%;
-        padding-left: 13%;
-    }
-      .selection_click {
-        background: none;
-        border: 1px solid #00e1ff;
-    }
-    .selection_noclick {
-        background: none;
-        border: 1px solid grey;
-    }
-    .selection1,
-    .selection2 {
-        padding-top: 0;
-        height: 30%;
-        margin-bottom: 15px;
-        padding: 10px 10px;
-        width: 85%;
-    }
-    .selection {
+    .header_container {
         width: 80%;
-        padding-top: 20px;
     }
-    .selection2 {
-        right: -12px;
+    #logo {
+        width: 73%;
     }
-
+    header {
+        line-height: 70px;
+    }
+    .menu_burg {
+        width: 80%;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
 }
-@media only screen and (max-width: 320px) {
-    .photo {
-        height: 110px;
+@media only screen and (max-width: 687px) {
+    .search_section select {
+        width: 45%;
+        margin-bottom: 15px;
     }
-    .fourColumn {
-        width: 50%;
-        margin-right: 0;
-        margin-bottom: 20px;
-        vertical-align: middle;
+    .search_section {
+        height: 249px;
     }
-    .switch {
-        font-size: 12px;
+    .search_section div {
+        overflow: hidden;
     }
-  
-    .device_description {
-        width: 85%;
-    }
-    #portfolio,
-    #whoweare,
-    #contacts {
-        padding-top: 20px;
-    }
-    #portfolio p,
-    #whoweare .title,
-    #contacts .title {
-        width: 85%;
-    }
-    #fourColumn_last_span {
+    .search_section button {
         position: relative;
-        top: 58px;
+        right: -12%;
     }
-    .fourColumn_mod {
-        width: 100%;
-        margin-bottom: 0;
+    .photo {
+        height: 280px;
     }
     .photo_text {
-        padding-top: 0;
-        font-size: 16px;
+        font-size: 31px;
+        padding-top: 100px;
     }
-    .photo a {
-        padding: 9px 20px;
-        font-size: 13px;
+    .tabs {
+        width: 94%;
     }
-    .selection2 {
-        right: -7px;
+    .happy_story_text {
+        width: 40%;
     }
-    #portfolio h2,
-    #whoweare h2,
-    #contacts h2 {
+    .happy_story_text2 {
+        width: 40%;
+    }
+    .happy_story_text h4,
+    .happy_story_text2 h4 {
+        margin-top: 0;
+    }
+    .blog {
+        width: 60%;
+        margin: 0 auto;
+        display: block;
+    }
+    .section_blog {
+        height: 1525px;
+    }
+    .blog:last-child {
+        margin-top: 0;
+    }
+    .joinUs {
+        height: 355px;
+    }
+    .joinsus_text {
+        padding-top: 113px;
+    }
+    .menu_burg {
+        width: 70%;
+    }
+    .header_container {
+        width: 70%;
+    }
+    .footer_about {
+        margin-right: 4%;
+    }
+    footer {
+        height: 351px;
+    }
+    .footer_social li {
+        float: none;
+        padding-left: 10%;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .header_container {
+        width: 100%;
+    }
+    #logo {
+        width: 31%;
+    }
+    .menu_burg {
+        width: 100%;
+    }
+    .photo {
+        height: 150px;
+    }
+    .photo_text {
+        font-size: 20px;
+        padding-top: 52px;
+    }
+    .search_section button {
+        right: 0%;
+    }
+    .signup a {
+        font-size: 15px;
+    }
+    #logo {
+        font-size: 25px;
+    }
+    .search_section select {
+        font-size: 15px;
+    }
+    .tabs {
+        padding-top: 16px;
+    }
+    .tabs_a {
+        font-size: 21px;
+    }
+    .members {
+        height: 456px;
+    }
+    .happy_story_picture {
+        display: none;
+    }
+    .overlayed {
+        display: none;
+    }
+    .happy_story_text {
+        width: 92%;
+    }
+    .happy_story_picture2 {
+        display: none;
+    }
+    .overlayedRight {
+        display: none;
+    }
+    .happy_story_text2 {
+        width: 92%;
+    }
+    .blog {
+        width: 97%;
+    }
+    .joinUs {
+        height: 169px;
+    }
+    .joinsus_text {
+        padding-top: 31px;
         font-size: 30px;
     }
-    .error1 {
-        top: 96px;
-        right: -9%;
+    .joinUs a {
         font-size: 12px;
     }
-    .error2 {
-        top: 156px;
-        left: -3%;
-       
-        font-size: 12px;
+    form {
+        width: 86%;
     }
-    .error3 {
-        top: 207px;
-        right: 11%;
-        font-size: 12px;
+    .happy h2,
+    .section_blog h2,
+    .contact_us h2 {
+        padding-top: 32px;
+        font-size: 30px;
+        padding-bottom: 0px;
     }
-    .div_address {
-        background: none;
-        width: 90%;
+    .section_blog {
+        height: 1386px;
     }
-    .rights img {
-        right: 42%;
+    .contact_us {
+        height: 366px;
+    }
+    .happy {
+        height: 787px;
+    }
+    .modal_login {
+        left: 0%;
+        right: 0%;
+    }
+    .footer_about {
+        width: 96%;
+    }
+    .footer_menu1 {
+        width: 43%;
+        margin-left: 34%;
+    }
+    .footer_menu2 {
+        width: 43%;
+        margin-left: 34%;
+    }
+    .footer_social {
+        width: 100%;
+    }
+    .footer_social li {
+        float: left;
+    }
+    .footer_about h3,
+    .footer_social h3 {
+        margin-left: 34%;
+    }
+    footer {
+        height: 726px;
+    }
+    .footer_social p {
+        text-align: center;
     }
 }

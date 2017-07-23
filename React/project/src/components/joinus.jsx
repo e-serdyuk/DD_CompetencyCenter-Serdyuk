@@ -1,4 +1,5 @@
 ﻿var React = require('react');   
+var Link = require('react-router-dom').Link;
 
 class Join extends React.Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class Join extends React.Component {
     render(){
         return (<div>
   <div className="joinsus_text">JOIN US NOW</div>
-  <button>CREATE AN ACCOUNT</button></div>
+  <Link to='/signup'>CREATE AN ACCOUNT</Link></div>
         )
     }
 }
