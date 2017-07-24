@@ -82,7 +82,7 @@ header {
     text-transform: uppercase;
     float: left;
     margin-right: 25px;
-    border-bottom: 2px solid rgba(99, 95, 104, 0.4);
+    border-bottom: 2px solid rgba(99, 95, 104, 0.01);
 }
 .menu li:hover,
 #menu li:hover {
@@ -177,6 +177,8 @@ form input[type="submit"] {
     font-family: ArchivoBlack;
     font-weight: bold;
 }
+.tab1{    color: black;
+    border-bottom: 4px solid rgb(219, 161, 253);}
 .parallax_section {
     height: 350px;
 }
@@ -636,3 +638,4 @@ footer {
 .Messspan {
     text-align: right;
 }
+

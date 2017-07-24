@@ -3,6 +3,7 @@ var bindActionCreators =  require('redux').bindActionCreators;
 var connect = require('react-redux').connect;
 var actions = require('../actions/actions.jsx'); 
 var Link = require('react-router-dom').Link; 
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group'); 
 
 class Blog extends React.Component {
     constructor(props) {
@@ -24,12 +25,7 @@ var timerId = setInterval(this.clicked, 5000);
 
 }
     render(){
-
-        return (<div>
- <h2>Latest Blog</h2>
-    <div className="blog-group">
-
-{this.props.items.map((item, i) => (
+const blogsShow = this.props.items.map((item, i) => (
    <div key={i} className="blog">
       <div className="blog_photo">
          <img src={item.image_url}/>
@@ -40,8 +36,17 @@ var timerId = setInterval(this.clicked, 5000);
          <a href={item.link} className="blogRead">READ MORE</a>
       </div>
    </div>
-))}
+))
 
+        return (<div>
+ <h2>Latest Blog</h2>
+    <div className="blog-group">
+      <ReactCSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={1000}
+          transitionLeaveTimeout={800}>
+          {blogsShow}
+        </ReactCSSTransitionGroup>
 </div></div>
         )
     }

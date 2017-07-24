@@ -269,12 +269,12 @@ const reducer = (state={blogs: null, data:data, newStoriesData,OnlineData}, acti
 
          var n=0;
          while(n==0){
-    var arr=[nData[getRandomArbitrary(0, 6)],nData[getRandomArbitrary(0, 6)],nData[getRandomArbitrary(0, 6)]]
+    var arr=[nData[getRandomArbitrary(0, 5)],nData[getRandomArbitrary(0, 5)],nData[getRandomArbitrary(0, 5)]]
     if(arr[0]!==arr[1]&&arr[0]!==arr[2]&&arr[1]!==arr[2])
     n=1;
 
          }
-          
+          console.log(arr)
             return {...state, blogsToShow: arr}
             break;
         }
