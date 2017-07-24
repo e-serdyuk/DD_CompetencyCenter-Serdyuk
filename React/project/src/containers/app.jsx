@@ -92,7 +92,14 @@ var id=match.params.id;
 const Blogs = ({ match, history,e }) => {
 
 var id=match.params.id;
- var item=this.props.stateNew.blogsToShow[id]
+function matchesId(val) {
+      if (val.id == id) {
+            return val
+          }
+      }
+var item = this.props.stateNew.blogs.filter(matchesId)[0];
+
+
  
   const back = (e) => {
     e.stopPropagation()

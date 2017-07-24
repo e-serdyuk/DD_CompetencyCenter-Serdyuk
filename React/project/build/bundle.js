@@ -28898,7 +28898,7 @@ var Blog = function (_React$Component) {
                             { className: 'div_title' },
                             React.createElement(
                                 Link,
-                                { to: { pathname: '/Blogs/' + i } },
+                                { to: { pathname: '/Blogs/' + item.id } },
                                 ' ',
                                 React.createElement(
                                     'h4',
@@ -30056,7 +30056,12 @@ var App = function (_React$Component) {
 
 
         var id = match.params.id;
-        var item = _this2.props.stateNew.blogsToShow[id];
+        function matchesId(val) {
+          if (val.id == id) {
+            return val;
+          }
+        }
+        var item = _this2.props.stateNew.blogs.filter(matchesId)[0];
 
         var back = function back(e) {
           e.stopPropagation();

@@ -31,7 +31,7 @@ const blogsShow = this.props.items.map((item, i) => (
          <img src={item.image_url}/>
       </div>
       <div className="blog_description">
-     <div className="div_title"><Link to={{pathname:`/Blogs/${i}`}}> <h4>{item.title}</h4></Link></div>
+     <div className="div_title"><Link to={{pathname:`/Blogs/${item.id}`}}> <h4>{item.title}</h4></Link></div>
      <div className="div_content"> <p>{item.content} </p></div>
          <a href={item.link} className="blogRead">READ MORE</a>
       </div>
