@@ -29391,7 +29391,7 @@ function matchDispatchToProps(dispatch) {
 module.exports = connect(mapStateToProps, matchDispatchToProps)(Members);
 
 },{"../actions/actions.jsx":277,"../components/slider1.jsx":285,"../components/slider2.jsx":286,"react":262,"react-redux":73,"redux":269}],283:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -29413,72 +29413,61 @@ var Parallax = function (_React$Component) {
     }
 
     _createClass(Parallax, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            $(window).scroll(function (e) {
-                parallax();
-            });
-            function parallax() {
-                var scrolled = $(window).scrollTop();
-                $('.bg').css('top', -(scrolled * 0.1) + 'px');
-            }
-        }
-    }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
-                React.createElement('div', { className: 'bg' }),
+                React.createElement("div", { className: "bg" }),
                 React.createElement(
-                    'div',
-                    { className: 'parallax' },
+                    "div",
+                    { className: "parallax" },
                     React.createElement(
-                        'div',
-                        { className: 'ThreeColumn' },
-                        React.createElement('img', { src: 'src/images/icon1.png', alt: 'WEB DESIGN' }),
-                        React.createElement('br', null),
+                        "div",
+                        { className: "ThreeColumn" },
+                        React.createElement("img", { src: "src/images/icon1.png", alt: "WEB DESIGN" }),
+                        React.createElement("br", null),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'OVER 5000'
+                            "OVER 5000"
                         ),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'Famale users'
+                            "Famale users"
                         )
                     ),
                     React.createElement(
-                        'div',
-                        { className: 'ThreeColumn' },
-                        React.createElement('img', { src: 'src/images/icon2.png', alt: 'WEB DESIGN' }),
-                        React.createElement('br', null),
+                        "div",
+                        { className: "ThreeColumn" },
+                        React.createElement("img", { src: "src/images/icon2.png", alt: "WEB DESIGN" }),
+                        React.createElement("br", null),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'OVER 9000'
+                            "OVER 9000"
                         ),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'Happy couples'
+                            "Happy couples"
                         )
                     ),
                     React.createElement(
-                        'div',
-                        { className: 'ThreeColumn' },
-                        React.createElement('img', { src: 'src/images/icon3.png', alt: 'WEB DESIGN' }),
-                        React.createElement('br', null),
+                        "div",
+                        { className: "ThreeColumn" },
+                        React.createElement("img", { src: "src/images/icon3.png", alt: "WEB DESIGN" }),
+                        React.createElement("br", null),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'OVER 4000'
+                            "OVER 4000"
                         ),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'Male users'
+                            "Male users"
                         )
                     )
                 )
@@ -30288,7 +30277,7 @@ var App = function (_React$Component) {
                     null,
                     React.createElement(
                       Link,
-                      { to: 'search', spy: true, smooth: true, duration: 1500 },
+                      { to: 'search', spy: true, smooth: true, offset: -100, duration: 1500 },
                       'Search'
                     )
                   ),
@@ -30925,7 +30914,7 @@ var reducer = function reducer() {
                var arr = [nData[getRandomArbitrary(0, 5)], nData[getRandomArbitrary(0, 5)], nData[getRandomArbitrary(0, 5)]];
                if (arr[0] !== arr[1] && arr[0] !== arr[2] && arr[1] !== arr[2]) n = 1;
             }
-
+            console.log(arr);
             return _extends({}, state, { blogsToShow: arr });
             break;
          }

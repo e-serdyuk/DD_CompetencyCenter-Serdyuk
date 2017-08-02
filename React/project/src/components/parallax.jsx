@@ -4,16 +4,6 @@ class Parallax extends React.Component {
     constructor(props) {
         super(props)
     }  
-componentDidMount() {
-$(window).scroll(function(e){
-parallax();
-});
-function parallax(){
-var scrolled = $(window).scrollTop();
-$('.bg').css('top',-(scrolled*0.1)+'px');
-}
-
-}
 
     render(){
         return (<div>

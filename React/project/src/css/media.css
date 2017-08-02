@@ -1,3 +1,21 @@
+@media only screen and (max-width: 1869px) {
+    .search_section select {
+        width: 14%;
+        margin-right: 2%;
+    }
+}
+@media only screen and (max-width: 1735px) {
+     .header_container {
+        width: 85%;
+    }
+}
+@media only screen and (max-width: 1600px) {
+    .happy_story {
+        width: 75%;
+    }
+    .footer_container{width:76%;}
+}
+
 @media only screen and (max-width: 1367px) {
     .header_container {
         width: 95%;
@@ -58,14 +76,21 @@
         padding-top: 200px;
     }
     .menu li {
-        margin-right: 5%;
+        margin-right: 3%;
     }
+        .menu li a {
+       font-size: 17px;
+    }
+    .signup a{font-size: 15px;}
     form input[type="submit"] {
         margin-top: 30px;
     }
     .contact_us {
         height: 480px;
     }
+    .footer_menu2 {
+    width: 14%;
+    margin-right: 6%;}
 }
 @media only screen and (max-width: 992px) {
     .photo {
@@ -78,6 +103,10 @@
     .search_section select {
         width: 15%;
         margin-right: 1%;
+    }
+    .modal_login {
+        left: 15%;
+        right: 15%;
     }
     .parallax {
         width: 70%;
@@ -211,8 +240,20 @@
         font-size: 14px;
         text-transform: uppercase;
     }
+    .modal {
+    top: 200px;
 }
-@media only screen and (max-width: 687px) {
+}
+@media only screen and (max-width: 842px) {
+    .happy_story {
+        width: 98%;
+    }
+    .happy_story_text2 {
+        width: 58%;
+    }
+    .happy_story_text {
+        width: 58%;
+    }
     .search_section select {
         width: 45%;
         margin-bottom: 15px;
@@ -227,6 +268,15 @@
         position: relative;
         right: -12%;
     }
+        .happy_story_text h4,
+    .happy_story_text2 h4 {
+        margin-top: 0;
+    }
+
+
+}
+@media only screen and (max-width: 687px) {
+
     .photo {
         height: 280px;
     }
@@ -243,10 +293,7 @@
     .happy_story_text2 {
         width: 40%;
     }
-    .happy_story_text h4,
-    .happy_story_text2 h4 {
-        margin-top: 0;
-    }
+
     .blog {
         width: 60%;
         margin: 0 auto;
@@ -280,44 +327,71 @@
         float: none;
         padding-left: 10%;
     }
+    .footer_menu1{margin-right: 8%;}
+    .footer_menu2 {
+    width: 17%;
+    margin-right: 4%;
 }
-@media only screen and (max-width: 320px) {
+}
+@media only screen and (max-width: 600px) {
+
     .header_container {
         width: 100%;
     }
     #logo {
-        width: 31%;
+    width: 36%;
+}
+.menu_burg {
+    width: 100%;
+}
+.footer_menu2 {
+    width: 26%;
+    margin-right: 0%;
+}
+.footer_social {
+    width: 20%;
+}
+.footer_menu1 {
+    margin-right: 10%;
+}
+.happy_story_text {
+    width: 32%;
+}
+.happy_story_text2 {
+    width: 32%;
+}
+}
+@media only screen and (max-width: 465px) {
+    .footer_about {
+        width: 96%;
     }
-    .menu_burg {
+    .footer_menu1 {
+        width: 43%;
+        margin-left: 40%;
+    }
+    .footer_menu2 {
+        width: 43%;
+        margin-left: 40%;
+    }
+    .footer_social {
         width: 100%;
     }
-    .photo {
-        height: 150px;
+    .footer_social li {
+        float: left;
     }
-    .photo_text {
-        font-size: 20px;
-        padding-top: 52px;
+    .footer_about h3,
+    .footer_social h3 {
+        margin-left: 40%;
     }
-    .search_section button {
+    footer {
+        height: 726px;
+    }
+    .footer_social ul{margin-left: 13%;}
+    .footer_social p {
+        text-align: center;
+    }
+        .search_section button {
         right: 0%;
-    }
-    .signup a {
-        font-size: 15px;
-    }
-    #logo {
-        font-size: 25px;
-    }
-    .search_section select {
-        font-size: 15px;
-    }
-    .tabs {
-        padding-top: 16px;
-    }
-    .tabs_a {
-        font-size: 21px;
-    }
-    .members {
-        height: 456px;
     }
     .happy_story_picture {
         display: none;
@@ -337,6 +411,63 @@
     .happy_story_text2 {
         width: 92%;
     }
+        .modal_login {
+        left: 8%;
+        right: 8%;
+    }
+
+
+}
+@media only screen and (max-width: 320px) {
+    .footer_menu1 {
+        width: 43%;
+        margin-left: 34%;
+    }
+    .footer_social ul{margin-left: 7%;}
+    .footer_menu2 {
+        width: 43%;
+        margin-left: 34%;
+    }
+        .footer_about h3,
+    .footer_social h3 {
+        margin-left: 34%;
+    }
+    .header_container {
+        width: 100%;
+    }
+    #logo {
+        width: 31%;
+    }
+    .menu_burg {
+        width: 100%;
+    }
+    .photo {
+        height: 150px;
+    }
+    .photo_text {
+        font-size: 20px;
+        padding-top: 52px;
+    }
+
+    .signup a {
+        font-size: 15px;
+    }
+    #logo {
+        font-size: 25px;
+    }
+    .search_section select {
+        font-size: 15px;
+    }
+    .tabs {
+        padding-top: 16px;
+    }
+    .tabs_a {
+        font-size: 21px;
+    }
+    .members {
+        height: 456px;
+    }
+
     .blog {
         width: 97%;
     }
@@ -373,31 +504,5 @@
         left: 0%;
         right: 0%;
     }
-    .footer_about {
-        width: 96%;
-    }
-    .footer_menu1 {
-        width: 43%;
-        margin-left: 34%;
-    }
-    .footer_menu2 {
-        width: 43%;
-        margin-left: 34%;
-    }
-    .footer_social {
-        width: 100%;
-    }
-    .footer_social li {
-        float: left;
-    }
-    .footer_about h3,
-    .footer_social h3 {
-        margin-left: 34%;
-    }
-    footer {
-        height: 726px;
-    }
-    .footer_social p {
-        text-align: center;
-    }
+
 }

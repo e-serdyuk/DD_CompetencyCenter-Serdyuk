@@ -240,7 +240,7 @@ return ( <div>
       <nav className="menu">
          <ul>
             <li className="current-item"><Link onClick={this.scrollTo} spy={true} smooth={true} duration={1500}>Home</Link></li>
-            <li><Link to="search" spy={true} smooth={true} duration={1500}>Search</Link></li>
+            <li><Link to="search" spy={true} smooth={true} offset={-100} duration={1500}>Search</Link></li>
             <li><Link to="members" spy={true} smooth={true} duration={1500}>Members</Link></li>
             <li><Link to="happy" spy={true} smooth={true} duration={1500}>Extras</Link></li>
             <li><Link to="contact" spy={true} smooth={true} duration={1500}>Contact us</Link></li>
