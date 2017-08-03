@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function postRequest() {
+            var value = document.getElementsByTagName ('input')[0].value;
+            if (value) {
+                var xhr = new XMLHttpRequest ();
+                 xhr.open ("POST", "/test", true);
+                xhr.send (value);
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById ("post_request_data").innerHTML = xhr.responseText;
+                    }
+                };
+
+            } else {
+                alert('enter the data for POST request');
+            }
+        }
+    </script>
+    <title>Form</title>
+</head>
+<body>
+    <input>
+    <button onclick="postRequest()">CLICK</button>
+    <div id="post_request_data"></div>
+</body>
+</html>
