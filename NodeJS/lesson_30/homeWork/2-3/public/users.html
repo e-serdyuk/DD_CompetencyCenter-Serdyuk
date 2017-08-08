@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2-3</title>
+    <link rel="stylesheet" href="./public/styles.css">
+    <script>
+function getUsers( func) {
+    var xhr = new XMLHttpRequest ();
+    xhr.onload = function (data) {
+        return func(xhr.responseText);
+    };
+    xhr.open ('GET', '/usersData', true);
+    xhr.send ();
+}
+function showUsers() {
+     getUsers (function (data) {
+         var users = JSON.parse(data);
+         var ul = document.querySelectorAll(".users_list ul")[0];
+         users.map (function (item, index) {
+             var li = document.createElement ('li');
+             li.setAttribute ('onclick', `showUser(${index})`);
+             li.innerHTML = item.name;
+             ul.appendChild (li);
+         });
+    });
+}
+function getUser(id, func) {
+    var xhr = new XMLHttpRequest ();
+    xhr.onload = function (data) {
+         return func(xhr.responseText)
+    };
+    xhr.open ("GET", `/users/${id}`, true);
+    xhr.send ();
+}
+function showUser(id){
+    getUser(id,function (data) {
+        var userdata = JSON.parse(data);
+        var name= document.querySelectorAll("#name")[0];
+        var age= document.querySelectorAll("#age")[0];
+        name.innerHTML = userdata.name;
+        age.innerHTML = userdata.age;    
+    })
+
+}
+    </script>
+
+</head>
+<body onload="showUsers()">
+<div>
+    <div class="users_list">
+       <ul></ul>
+    </div>
+    <div class="user">
+       <span class="strong">Name-</span><span id="name"></span><br>
+       <span class="strong">Age-</span><span id="age"></span>
+    </div>
+
+
+</div>
+</body>
+</html>

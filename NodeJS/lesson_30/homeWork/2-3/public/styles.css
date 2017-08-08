@@ -1,0 +1,17 @@
+body{font-size: 22px;}
+ul {
+    list-style: none;
+}
+ul{padding-left: 0;}
+li {
+  cursor: pointer;
+  padding: 5px;
+  width: 100px;
+  
+}
+li:hover {
+font-weight: bold;
+}
+.strong{font-weight: bold;padding-top: 5px;}
+
+
