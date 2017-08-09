@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket;
+    function socket() {
+        socket = io.connect ('http://localhost:1337');
+        socket.on ('connect_error', function (err) {
+            console.log ('connection error= ', err);
+        });
+        socket.on ('chat_message', function (data) {
+            var el = document.getElementById ('received');
+            var e1 = document.createTextNode( 'User sent:' +  data.text);
+            var br = document.createElement('br');
+            el.appendChild(e1);
+            el.appendChild(br);
+            document.getElementById('input-msg').value = '';
+        });
+
+    }
+    function send() {
+        var e = document.getElementById('input-msg');
+        if(e.value){
+            socket.emit('send_message',{text:e.value})
+        }
+        else{alert("enter the message, and then press Send button")}
+    }
+</script>
+</head>
+<body onload="socket()">
+<div>
+<span> Message:</span>
+<input type="text" id="input-msg" placeholder="enter the message">
+ <button onclick="send()">Send</button>
+</div>
+<div>
+<p> Chat messages</p>
+<p id="received"></p>
+</div>
+</body>
+</html>
