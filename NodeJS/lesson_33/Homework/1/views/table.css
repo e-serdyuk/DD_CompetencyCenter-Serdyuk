@@ -1,0 +1,6 @@
+td{border: 1px solid grey; padding: 15px 20px;}
+table{margin-bottom: 20px;border-collapse: collapse;}
+.add_button,.edit_button,.del_button{padding: 11px 18px; background-color: orange; border-radius: 6px; text-decoration: none; color: white; text-transform: uppercase;cursor: pointer;}
+.edit_button{margin-top: 5px;cursor: pointer;}
+.del_button{margin-top: 24px;cursor: pointer;}
+.inputs{margin-bottom: 30px;}
