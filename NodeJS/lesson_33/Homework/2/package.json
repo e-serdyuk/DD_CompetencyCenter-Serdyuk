@@ -1,0 +1,22 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "mysql": "^2.14.1",
+    "restify": "~4.x.x",
+    "serve-index": "^1.9.0",
+    "serve-static-restify": "^1.0.0"
+  }
+} 
+
+
+

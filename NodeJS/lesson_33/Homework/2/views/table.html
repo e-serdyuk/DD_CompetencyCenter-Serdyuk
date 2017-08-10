@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="./views/table.css">
+      <script src="./views/table.js"></script>
+      <title>Task1</title>
+   </head>
+   <body onload="showTable()">
+      <div class="container">
+         <div id="table_show"></div>
+         <div class="panel panel-success">
+            <div>
+               <div class=inputs>
+                  <div>
+                     <span>Id</span>
+                     <input type="number" id="IDinput">
+                  </div>
+                  <div>
+                     <span>Name</span>
+                     <input type="text" id="inputname">
+                  </div>
+                  <div>
+                     <span>Description</span>
+                     <input type="text" id="inputinfo">
+                  </div>
+               </div>
+               <div>
+                  <a class=edit_button onclick="edititem()" id="edit-btn">Edit item</a>
+                  <a class=del_button  onclick="deleteItem()" >Delete item</a>
+                  <a class="add_button" onclick="addItem()" >Add item</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
